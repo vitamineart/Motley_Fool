@@ -1,0 +1,110 @@
+/////////////////////////////////////////////////
+//                                             //
+//   Market performance                        //
+//                                             //
+/////////////////////////////////////////////////
+
+
+// color variables
+$gray: #555;
+$blue: #336699;
+$yellow: #FFCC33;
+$green: #339933;
+$red: #CC3300;
+$beige: #FFCC99;
+// color variables end
+
+.market-performance-card {
+    border: 1px solid lighten($gray, 50%);
+    background: #fff;
+    padding: 30px;
+    @media (max-width:659px) {
+        padding: 15px;
+    }
+    .mega-menu-wrapper & {
+        padding: 20px;
+        max-width:250px;
+        .market-table {
+            font-size: 14px;
+            .item {
+                padding: 7px 0;
+                .market-time-period {
+                    font-size: 16px;
+                }
+                .market-value {
+                    width: 50px;
+                    font-size: 14px;
+                    [class*=fa-] {
+                        font-size: 30px;
+                        margin-top: -5px;
+                    }
+                }
+            }
+        }
+        @media (max-width:1023px) {
+            display: none;
+        }
+    }
+    .sponsored-by {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* market table */
+.market-table {
+	.item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		padding: 10px 0;
+		.market-time-period {
+			font-size: 13px;
+			color: $gray;
+			flex: 1 1 33%;
+			max-width: 50px;
+		}
+		.market-value {
+			position: relative;
+			font-weight: 700;
+			font-size: 17px;
+			line-height: 1;
+			flex: 1 1 33%;
+			max-width: 33%;
+			text-align: right;
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			span {
+				vertical-align: middle;
+			}
+			[class*=fa-] {
+				opacity: 0.5;
+				font-size: 30px;
+				transform: scaleX(0.7);
+			}
+			&.up {
+				color: darken($green, 10%);
+			}
+			&.down {
+				color: $red;
+			}
+			&.col-name {
+				font-size: 15px;
+			}
+			.disclaimer {
+				font-weight: normal;
+				font-size: 13px;
+			}
+		}
+		&:last-child {
+			border: none;
+		}
+		&.disclaimer {
+			padding:0;
+		}
+	}
+	margin-bottom: 15px;
+}

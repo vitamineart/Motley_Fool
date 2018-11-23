@@ -1,0 +1,771 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+.hp-news-panel {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  margin-bottom: 20px;
+}
+
+@supports (display: grid) {
+  .hp-news-panel {
+    display: grid;
+    grid-gap: 2px;
+  }
+  @media (min-width: 480px) {
+    .hp-news-panel {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+}
+
+.hp-news-panel .market-performance-card {
+  max-height: 350px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .hp-news-panel .market-performance-card {
+    display: inline-block;
+    width: 22%;
+  }
+}
+
+@supports (display: grid) {
+  .hp-news-panel .market-performance-card {
+    width: auto;
+    grid-column-start: span 12;
+  }
+  @media (min-width: 480px) {
+    .hp-news-panel .market-performance-card {
+      margin-bottom: 0;
+    }
+  }
+  @media (min-width: 660px) {
+    .hp-news-panel .market-performance-card {
+      grid-column-start: span 6;
+    }
+  }
+  @media (min-width: 860px) {
+    .hp-news-panel .market-performance-card {
+      grid-column-start: span 6;
+    }
+  }
+  @media (min-width: 1024px) {
+    .hp-news-panel .market-performance-card {
+      grid-column-start: span 3;
+    }
+  }
+}
+
+.hp-news-panel-article {
+  transition: 0.3s ease;
+  position: relative;
+  min-height: 250px;
+  overflow: hidden;
+  width: 100%;
+  display: block;
+  margin: 0 0 10px 0;
+  border: 2px solid transparent;
+}
+
+@media (min-width: 1024px) {
+  .hp-news-panel-article {
+    display: inline-block;
+    vertical-align: top;
+    min-height: 300px;
+    width: 23%;
+    margin: 0 5px;
+  }
+}
+
+@supports (display: grid) {
+  .hp-news-panel-article {
+    margin: 0;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    grid-column-start: span 12;
+  }
+  @media (min-width: 480px) {
+    .hp-news-panel-article {
+      grid-column-start: span 6;
+      margin-bottom: 0;
+    }
+  }
+  @media (min-width: 860px) {
+    .hp-news-panel-article {
+      grid-column-start: span 3;
+    }
+  }
+}
+
+.hp-news-panel-article.featured {
+  margin: 0 20px;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .hp-news-panel-article.featured {
+    width: 45%;
+    margin: 10px;
+  }
+}
+
+@supports (display: grid) {
+  .hp-news-panel-article.featured {
+    order: -1;
+    grid-column-start: span 12;
+    width: auto;
+    margin: 0;
+  }
+  @media (min-width: 860px) {
+    .hp-news-panel-article.featured {
+      max-height: 350px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .hp-news-panel-article.featured {
+      order: 0;
+      grid-column-start: span 5;
+    }
+  }
+  @media (min-width: 1200px) {
+    .hp-news-panel-article.featured {
+      grid-column-start: span 6;
+    }
+  }
+}
+
+.hp-news-panel-article.trending {
+  align-items: flex-start;
+  box-shadow: none;
+  padding: 0 15px 7.5px 15px;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .hp-news-panel-article.trending {
+    width: 25%;
+  }
+}
+
+@supports (display: grid) {
+  .hp-news-panel-article.trending {
+    grid-column-start: span 12;
+    width: auto;
+  }
+  @media (min-width: 660px) {
+    .hp-news-panel-article.trending {
+      grid-column-start: span 6;
+    }
+  }
+  @media (min-width: 860px) {
+    .hp-news-panel-article.trending {
+      padding: 0;
+    }
+  }
+  @media (min-width: 1024px) {
+    .hp-news-panel-article.trending {
+      grid-column-start: span 4;
+    }
+  }
+  @media (min-width: 1200px) {
+    .hp-news-panel-article.trending {
+      grid-column-start: span 3;
+    }
+  }
+}
+
+.hp-news-panel-article.trending .label {
+  display: inline-block;
+  vertical-align: top;
+  background: #8a2200;
+  background: #CC3300;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 3px 10px;
+  margin-bottom: 7.5px;
+}
+
+.hp-news-panel-article > a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.hp-news-panel-article .image {
+  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.hp-news-panel-article .image img {
+  transition: .6s ease;
+  display: block;
+  max-width: 100%;
+  width: 100%;
+}
+
+@supports (object-fit: cover) {
+  .hp-news-panel-article .image img {
+    object-fit: cover;
+    height: 100%;
+  }
+}
+
+.hp-news-panel-article:hover:not(.trending) {
+  border-color: #FFCC33;
+}
+
+.hp-news-panel-article:hover .image img {
+  transform: scale(1.03) rotate(0.1deg);
+  filter: brightness(110%) saturate(120%);
+}
+
+.hp-news-panel-article:hover .hp-news-panel-article-caption {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.hp-news-panel-article-caption {
+  transition: .3s ease;
+  padding: 15px;
+  z-index: 2;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
+
+.hp-news-panel-article-caption .author-byline {
+  color: #fff;
+  margin: 0;
+  font-size: 13px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  display: none;
+}
+
+.hp-news-panel-article-caption h2.hp-news-panel-article-header {
+  border: none;
+  font-size: 23px;
+  text-transform: none;
+  margin-bottom: 7.5px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  line-height: 1.2;
+}
+
+@supports (display: flex) {
+  .hp-news-panel-article-caption h2.hp-news-panel-article-header {
+    flex: 1;
+  }
+}
+
+.featured .hp-news-panel-article-caption h2.hp-news-panel-article-header {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+@media (min-width: 860px) {
+  .featured .hp-news-panel-article-caption h2.hp-news-panel-article-header {
+    max-width: 700px;
+    font-size: 35px;
+    font-weight: 700;
+  }
+}
+
+@media (min-width: 480px) {
+  .hp-news-panel-article-caption {
+    min-height: 30%;
+  }
+}
+
+h2.panel-section-header {
+  display: block;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  text-align: center;
+  color: #777;
+  padding: 0 15px;
+  border: none;
+  margin: 15px 0;
+  padding: 0;
+  font-size: 26px;
+  font-weight: 100;
+  border-bottom: none;
+}
+
+#investing-news-section {
+  background-color: #f7f7f7;
+  padding: 0;
+}
+
+@media (min-width: 860px) {
+  #investing-news-section {
+    padding: 1rem;
+  }
+}
+
+ul.hp-trending-articles-list li {
+  border-top: 1px solid #ddd;
+}
+
+ul.hp-trending-articles-list li a {
+  display: block;
+  line-height: 1.1;
+  padding: 10px 0 10px;
+  color: #336699;
+}
+
+ul.hp-trending-articles-list li a:hover {
+  color: #6699cc;
+}
+
+ul.hp-trending-articles-list li:first-child {
+  border-top: none;
+}
+
+.all-fool-articles {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* ==================================How Help Section ============================ */
+#how-help-section {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  padding: 15px 7.5px;
+  background-color: #fff;
+}
+
+@media (min-width: 660px) {
+  #how-help-section {
+    padding: 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #how-help-section {
+    padding: 30px;
+  }
+}
+
+#how-help-section h2 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  text-transform: none;
+  margin: 15px 0;
+  text-align: center;
+}
+
+@media (min-width: 480px) {
+  #how-help-section h2 {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 660px) {
+  #how-help-section h2 {
+    font-size: 35px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #how-help-section h2 {
+    font-size: 40px;
+  }
+}
+
+#how-help-section .how-help-grid {
+  display: grid;
+  grid-gap: 7.5px;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+@media (min-width: 1024px) {
+  #how-help-section .how-help-grid {
+    grid-gap: 15px;
+  }
+}
+
+#how-help-section .how-help-grid .grid-item {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  grid-column-start: span 12;
+  padding: 7.5px;
+  background: linear-gradient(#fafafa, transparent);
+  border: 1px solid #eee;
+  border-bottom-width: 3px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 7px;
+  text-align: center;
+  color: #336699;
+}
+
+@media (min-width: 480px) {
+  #how-help-section .how-help-grid .grid-item {
+    padding: 15px;
+  }
+}
+
+@media (min-width: 660px) {
+  #how-help-section .how-help-grid .grid-item {
+    grid-column-start: span 6;
+  }
+}
+
+@media (min-width: 1024px) {
+  #how-help-section .how-help-grid .grid-item {
+    grid-column-start: span 4;
+    padding: 15px 30px;
+  }
+}
+
+#how-help-section .how-help-grid .grid-item .grid-item-icon {
+  font-size: 30px;
+  margin: 3px 0;
+  float: none;
+  border-radius: 50%;
+  background-color: #336699;
+  border: 2px solid transparent;
+  width: 60px;
+  height: 60px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .2s ease-out;
+}
+
+#how-help-section .how-help-grid .grid-item .grid-item-icon .fa {
+  color: #fff;
+  transition: .3s ease;
+}
+
+@media (min-width: 660px) {
+  #how-help-section .how-help-grid .grid-item .grid-item-icon {
+    font-size: 35px;
+    width: 70px;
+    height: 70px;
+    margin: 7.5px 0;
+  }
+}
+
+@media (min-width: 860px) {
+  #how-help-section .how-help-grid .grid-item .grid-item-icon {
+    font-size: 40px;
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #how-help-section .how-help-grid .grid-item .grid-item-icon {
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+    margin: 15px 0;
+  }
+}
+
+#how-help-section .how-help-grid .grid-item h3 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+@media (min-width: 480px) {
+  #how-help-section .how-help-grid .grid-item h3 {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 660px) {
+  #how-help-section .how-help-grid .grid-item h3 {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 860px) {
+  #how-help-section .how-help-grid .grid-item h3 {
+    font-size: 30px;
+  }
+}
+
+#how-help-section .how-help-grid .grid-item h3 + p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+  letter-spacing: 0;
+  margin-bottom: 0;
+}
+
+@media (min-width: 660px) {
+  #how-help-section .how-help-grid .grid-item h3 + p {
+    font-size: 16px;
+  }
+}
+
+#how-help-section .how-help-grid .grid-item:hover, #how-help-section .how-help-grid .grid-item:active, #how-help-section .how-help-grid .grid-item:focus {
+  background: #FFCC33;
+  color: #fff;
+  border-bottom-width: 1px;
+  border-color: #e6ac00;
+}
+
+#how-help-section .how-help-grid .grid-item:hover .grid-item-icon, #how-help-section .how-help-grid .grid-item:active .grid-item-icon, #how-help-section .how-help-grid .grid-item:focus .grid-item-icon {
+  background-color: #FFCC33;
+  border-color: #fff;
+}
+
+#how-help-section .how-help-grid .grid-item:hover .grid-item-icon .fa, #how-help-section .how-help-grid .grid-item:active .grid-item-icon .fa, #how-help-section .how-help-grid .grid-item:focus .grid-item-icon .fa {
+  color: #fff;
+}
+
+#how-help-section .how-help-grid .grid-item:hover .grid-item-text, #how-help-section .how-help-grid .grid-item:active .grid-item-text, #how-help-section .how-help-grid .grid-item:focus .grid-item-text {
+  color: #fff;
+}
+
+/* ==================================How Help Section end ============================ */
+/* ==================================About The Motley Fool ============================ */
+.across-the-web-section .about h2 {
+  text-transform: none;
+  font-size: 28px;
+  padding-bottom: 15px;
+  border: none;
+}
+
+.across-the-web-section .about h3 {
+  margin: 25px 0 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  font-size: 110%;
+}
+
+.across-the-web-section .about h4 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 75%;
+  margin-bottom: 15px;
+  opacity: 1;
+  color: #666;
+}
+
+.across-the-web-section .about .social-links {
+  margin: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.across-the-web-section .about .social-links li {
+  margin: 7.5px;
+}
+
+.across-the-web-section .about .premium-services h4 {
+  color: #666;
+}
+
+.across-the-web-section .about .premium-services .all-services {
+  font-weight: 400;
+  display: inline-block;
+  align-items: center;
+  margin: 0;
+  font-size: 16px;
+  border: 1px solid #336699;
+  padding: 15px 25px;
+  border-radius: 7px;
+  color: #336699;
+}
+
+.across-the-web-section .about .premium-services .all-services .fa {
+  font-size: 13px;
+  margin-left: 5px;
+}
+
+@media (min-width: 480px) {
+  .across-the-web-section .about .premium-services .all-services {
+    margin: 15px;
+  }
+}
+
+.across-the-web-section .about .premium-services .all-services:hover, .across-the-web-section .about .premium-services .all-services:active, .across-the-web-section .about .premium-services .all-services:focus {
+  background-color: #336699;
+  color: #fff;
+}
+
+.across-the-web-section .about .podcasts .podcast-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.across-the-web-section .about .podcasts .podcast-links li {
+  flex-basis: 50%;
+  padding: 15px;
+  margin: 0;
+  text-align: center;
+}
+
+@media (min-width: 660px) {
+  .across-the-web-section .about .podcasts .podcast-links li {
+    flex-basis: 33%;
+  }
+}
+
+@media (min-width: 860px) {
+  .across-the-web-section .about .podcasts .podcast-links li {
+    flex-basis: 25%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .across-the-web-section .about .podcasts .podcast-links li {
+    flex-basis: 20%;
+  }
+}
+
+.across-the-web-section .about .podcasts .podcast-links li a {
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 480px) {
+  .across-the-web-section .about .podcasts .podcast-links li a {
+    flex-direction: column;
+  }
+}
+
+.across-the-web-section .about .podcasts .podcast-links li a img {
+  margin-right: 5px;
+}
+
+.global-companies h3 {
+  margin-bottom: 15px;
+}
+
+.global-companies-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  float: none;
+}
+
+.global-companies-grid .grid-item {
+  display: inline-flex;
+  flex-direction: column;
+  flex-basis: 25%;
+  align-items: center;
+  padding: 15px;
+}
+
+@media (min-width: 1024px) {
+  .global-companies-grid .grid-item {
+    flex-basis: 20%;
+  }
+}
+
+.global-companies-grid .grid-item img {
+  max-height: 35px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+}
+
+.global-companies-grid .grid-item span {
+  text-align: center;
+}
+
+@media (max-width: 479px) {
+  .global-companies-grid .grid-item span {
+    display: none;
+  }
+}
+
+.home-page .around-the-web-sidebar .sister-companies {
+  padding: 15px;
+  margin-bottom: 0;
+}
+
+.home-page .around-the-web-sidebar .sister-companies h3 {
+  margin-top: 0;
+  border: none;
+  padding-top: 0;
+}
+
+@media (min-width: 480px) {
+  .home-page .around-the-web-sidebar .sister-companies {
+    padding: 30px;
+  }
+}
+
+.home-page .around-the-web-sidebar .sister-companies li {
+  margin-top: 0;
+}
+
+.home-page .around-the-web-sidebar .sister-companies li:last-child {
+  padding-top: 10px;
+  border: 0;
+}
+
+.home-page .around-the-web-sidebar .sister-companies img {
+  max-height: 45px;
+}
+
+.home-page .around-the-web-sidebar .more-from-the-motley-fool {
+  background-color: #fff;
+  box-shadow: 0 0 2px -1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
+  padding: 25px 40px;
+  margin: 20px 0px;
+  border: solid 1px #eee;
+  padding: 15px 15px 0;
+}
+
+@media (min-width: 480px) {
+  .home-page .around-the-web-sidebar .more-from-the-motley-fool {
+    padding: 15px 30px 0;
+  }
+}
+
+.home-page .around-the-web-sidebar .more-from-the-motley-fool h4 {
+  margin-top: 15px;
+  margin-bottom: 7.5px;
+  text-transform: none;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.home-page .around-the-web-sidebar .more-from-the-motley-fool h4 .fa {
+  font-size: 20px;
+  order: -1;
+  margin-right: 10px;
+}
+
+.home-page .around-the-web-sidebar .more-from-the-motley-fool ul {
+  margin-bottom: 30px;
+}
+
+.home-page .around-the-web-sidebar .more-from-the-motley-fool ul li {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+/* ================================== About The Motley Fool end ============================ */

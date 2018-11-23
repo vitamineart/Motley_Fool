@@ -1,0 +1,19 @@
+.read-more {
+  font-size: 80%;
+  display: block;
+  text-transform:capitalize;
+  margin: 2em auto;
+
+}
+.pagination {
+  display: none;
+  ul {
+    display: inline-block;
+    line-height: 300%;
+    text-align: center;
+    li.active a {
+      background: #444 none repeat scroll 0 0;
+      color: #fff;
+    }
+  }
+}

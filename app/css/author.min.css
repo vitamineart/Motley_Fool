@@ -1,0 +1,1 @@
+.show-more{display:inline-block}.show-more:after{content:"More..."}.expandable{display:none}.expandable.show{display:inline-block}.expandable.show+.show-more:after{content:"Less..."}

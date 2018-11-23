@@ -1,0 +1,51 @@
+/* -----------------------------------------colors------------------------ */
+.text_green,
+.text-green {
+  color: #339933;
+}
+.bg_green,
+.bg-green {
+  background-color: #339933;
+}
+.text_blue,
+.text-blue {
+  color: #336699;
+}
+.bg_blue,
+.bg-blue {
+  background-color: #336699;
+}
+.text_yellow,
+.text-yellow {
+  color: #FFCC33;
+}
+.bg_yellow,
+.bg-yellow {
+  background-color: #FFCC33;
+}
+.text_beige,
+.text-beige {
+  color: #FFCC99;
+}
+.bg_beige,
+.bg-beige {
+  background-color: #FFCC99;
+}
+.text_red,
+.text-red {
+  color: #CC3300;
+}
+.bg_red,
+.bg-red {
+  background-color: #CC3300;
+}
+/* -----------------------------------------colors end------------------------ */
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}

@@ -1,0 +1,11 @@
+@import "colors";
+
+#PodcactTranscripts {
+	color: #000;
+	&:hover, &:active, &:focus {
+		color: $blue;
+	}
+    .fa {
+        margin-right: 7px;
+    }
+}

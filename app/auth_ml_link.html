@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <script>
+    // magiclinks
+window.top!=window&&(window.analytics=window.top.analytics,window.inIframe=!0);var segmentKey="aABfYjFIJ9lHiTjsjihm6l3jYSyw59A1",segmentSnippetVersion="4.1.0",getSegmentUrl=function(t){var t=t||window.segmentKey;return("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js"},infotrackUrl="//g.foolcdn.com/mms/resources/js/infotrack_min.js",trackerMaker=function(t){var n=[];n.invoked=!1,n.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"],t&&(n.methods=n.methods.concat(t));var e=function(t){var e=function(){var e=Array.prototype.slice.call(arguments,0),o=[t].concat(e);n.push(o)};return e.stub=!0,e},o=function(){for(var t=0;t<n.methods.length;t++){var o=n.methods[t];n[o]=e(o)}},r=function(t){if(n.invoked)return void(window.console&&console.error&&console.error("Tracking snippet included twice."));var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src=t;var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(e,o),n.invoked=!0};return o(),n.load=r,n},analytics=window.analytics=window.analytics||trackerMaker(),Infotrack=window.Infotrack=window.Infotrack||trackerMaker(["initialize"]);Infotrack.load(infotrackUrl);
+  </script>
+  <meta name="infotrackSnippetVersion" content="3.0.0" data-tracker-key="infotrackSnippetVersion">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Send Me a Temporary Sign In Link</title>
+    <link rel="shortcut icon" href="http://www.fool.com/static/dubs/elvis/images/favicon.13af4883f3a3.ico">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <style type="text/css">
+	    body {
+		    background-color: #f7f7f7;
+		    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		}
+		#logo {
+		    float: none;
+		    width: 100%;
+		    height: 48px;
+		    margin: 10px auto;
+		}
+		#logo a {
+		    background-image: url(//g.foolcdn.com/art/fool15/bg/fool-logo.png);
+		    background-repeat: no-repeat;
+		    background-position: center;
+		    background-size: contain;
+		    margin: auto;
+		    width: 260px;
+    		display: block;
+    		height: 56px;
+    		text-indent: -9999px;
+		}
+		h1 {
+			font-size: 1.8rem;
+    		font-weight: 300;
+    		margin-bottom: 1rem;
+		}
+		p {
+			font-size: .95rem;
+		}
+		.card {
+		    margin: 20px auto;
+		    max-width: 400px;
+		    border: 1px solid #ccc;
+		    box-shadow: none;
+		    text-align: center;
+		}
+		.card p {
+		    text-align: left;
+		}
+		.card-block {
+			padding: 30px 15px;
+		}
+		@media (min-width:660px) {
+			.card-block {
+				padding: 40px;
+			}
+		}
+		.btn-primary, .btn-primary:hover {
+			background: #0087de none repeat scroll 0 0;
+			font-size: 1.15rem;
+			margin: 1.5rem auto;
+		}
+		.btn-primary:hover {
+			opacity: 0.8;
+		}
+
+		footer {
+			text-align: center;
+			max-width: 400px;
+			margin: 0 auto;
+			font-size: 0.75rem;
+		}
+		footer ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		footer ul li {
+			display: inline;
+			margin: 0 0 0 .3rem;
+			border-right: 1px solid #ccc;
+			padding-right: .5rem;
+		}
+		footer a {
+			color: #888;
+			text-decoration: underline;
+		}
+		footer .copyright {
+			color: #888;
+		    font-size: 0.75rem;
+		    margin-top: 1rem;
+		}
+    </style>
+</head>
+<body>
+	<div id="logo">
+		<a href="http://www.fool.com/">The Motley Fool</a>
+	</div>
+	<div class="card">
+		<div class="card-block">
+
+<h1>Temporary Sign In Link</h1>
+    <p>
+        Forgot your password? Can't remember the email address you used to sign up?</p>
+    <p>
+        Enter up to 10 email addresses below separated by commas and click the button. Any email address we recognize will receive a link allowing you to sign in instantly!
+    </p>
+<form action="/auth/ml/link/" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='svT0za7SwFP0VU0IYLeJBFiAhEEu2A1q973E4TjNnOFwsOieLxcdTWLau5x69tzo' />
+    <input type="hidden" name="destination" value="http://www.fool.com" id="id_destination" />
+
+        <div class="form-group"><input type="text" name="email" id="id_email" required placeholder="Enter email address" class="form-control" maxlength="2048" />
+
+        </div>
+
+
+    <button type="submit" class="btn btn-primary btn-lg btn-block">Send Sign In Link</button>
+</form>
+
+		</div>
+	</div>
+	<footer>
+		<ul>
+			<li><a href="http://www.fool.com/help/index.htm?display=about02&amp;ref=BTMP" title="Fool Disclosure">Fool Disclosure</a></li>
+			<li><a href="http://www.fool.com/help/index.htm?display=newuser03" title="Privacy Policy">Privacy Policy</a></li>
+			<li><a href="http://www.fool.com/legal/stuff-we-own.aspx" title="Copyright, Trademark and Patent Information">Copyright, Trademark and Patent Information</a></li>
+			<li><a href="http://www.fool.com/legal/the-motley-fools-rules.aspx" title="Terms and Conditions">Terms and Conditions</a></li>
+		</ul>
+		<p class="copyright">&copy; 1995 - 2016 The Motley Fool. All rights reserved.</p>
+	</footer>
+  <script>
+    if (typeof window.Infotrack !== "undefined")  {
+        window.Infotrack.initialize("magiclinks");
+    }
+  </script>
+  </body>
+</html>

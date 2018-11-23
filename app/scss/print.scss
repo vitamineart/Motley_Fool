@@ -1,0 +1,548 @@
+// fool breakpoints
+// $small-screen: em(355);
+// $medium-screen: em(660);
+// $mid-screen: em(860);
+// $large-screen: em(1024);
+// $x-large-screen: em(1280);
+
+// color variables
+$black: #000;
+$base: #333;
+$gray: #555;
+$blue: #336699;
+$darkBlue: hsl(197, 71%, 13%);
+$yellow: #FFCC33;
+$green: #339933;
+$red: #CC3300;
+$beige: #FFCC99;
+// color variables end
+// font variable
+$system-font: -apple-system, BlinkMacSystemFont,
+  "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+  "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+// font variable end
+
+body {
+  font-family: $system-font;
+  overflow-x: hidden;
+  @media (max-width:659px) {
+    background-color: #f5f5f5;
+  }
+  &.mobile-menu-open {
+    position: fixed;
+    left:0;
+    right:0;
+    overflow: hidden;
+  }
+}
+.visible-mobile {
+  display: block !important;
+  @media (min-width:1024px) {
+    display: none !important;
+  }
+}
+.hidden-mobile {
+  display: none !important;
+  @media (min-width:1024px) {
+    display: block !important;
+  }
+}
+
+
+
+.text-red {color: $red;}
+.btn {
+  transition: .3s ease;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 15px 30px;
+  margin: 30px;
+  font-weight: 700;
+  line-height:1;
+  font-size: 17px;
+  text-transform: uppercase;
+  &-blue {
+    background: $blue;
+    color: #fff;
+  }
+}
+.content-container {
+  color: $base;
+  font-size: 15px;
+  hyphens: auto;
+  hr {
+    border-bottom: 1px solid #EBF1F5;
+    margin: 15px 0;
+  }
+  a {
+    color: $blue;
+    transition: .3s ease;
+    &:hover {
+      color: #0A2C3A;
+    }
+  }
+}
+h1, h2, h3 {
+  margin-bottom: 15px;
+}
+h4, h5, h6 {
+  margin-bottom: 10px;
+}
+h3 {
+  font-size: 35px;
+  letter-spacing: -0.5px;
+  line-height: 1;
+  margin-bottom: 15px;
+}
+h4 {
+  letter-spacing: -0.5px;
+  margin-bottom: 15px;
+}
+h1, h2, h3, h5, h6 {
+  line-height: 1.2;
+  font-family: inherit;
+}
+.page-title-header {
+  padding: 0;
+  margin-bottom: 30px;
+  @media (max-width:1023px) {
+    // padding: 0 0 30px;
+  }
+  h1 {
+    margin: 0;
+  }
+  p {
+    color: $gray;
+    font-size: 24px;
+    margin: 5px 0 0;
+  }
+  &.author {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .col {
+      display: flex;
+      align-items: center;
+      flex-basis: 67%;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      @media (max-width:600px) {
+        flex-basis: 100%;
+      }
+      &.right {
+        flex-basis: 33%;
+        justify-content: flex-end;
+        @media (max-width:600px) {
+          flex-basis:100%;
+          justify-content: flex-start;
+          padding-left: 70px;
+          iframe {
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+    .image {
+      padding-right: 15px;
+      display: inline-block;
+      width: 70px;
+      flex-basis: 70px;
+    }
+    h1 {
+      display: inline-block;
+      margin-right: 5px;
+      margin-bottom: 10px;
+      flex: 1;
+      @media (min-width:380px) {
+        white-space: nowrap;
+      }
+    }
+    small {
+      display: inline-block;
+      text-transform: none;
+      flex-basis:100%;
+      padding-left: 72px;
+      margin-top: -15px;
+    }
+
+  }
+  small {
+    text-transform: uppercase;
+  }
+}
+.header-ads {
+  display: none;
+  padding: 0;
+  .banner {
+    @media (max-width:1023px) {
+      margin-bottom: 5px;
+    }
+  }
+}
+.banner {
+  display: none;
+}
+.content-container-columns {
+  max-width: 80em;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  .column {
+    &.main-column {
+      flex: 1 1 540px;
+      width: 540px;
+      padding-right: 15px;
+      @media (max-width:859px) {
+        max-width: 100%;
+        flex-basis: 100%;
+        padding: 0;
+      }
+    }
+    &.sidebar {
+      display: none;
+    }
+  }
+}
+.content-block {
+  background: #fff;
+  padding: 30px;
+  margin-bottom: 30px;
+  position: relative;
+  @media (max-width:479px) {
+    padding: 15px;
+  }
+  &:last-child {
+    // margin-bottom: 0;
+  }
+  img {
+    max-width: 100%;
+  }
+  .color-label {
+    position: absolute;
+    top: 0;
+    left: 30px;
+    width: 210px;
+    height: 3px;
+    @media (max-width:479px) {
+      left:15px;
+    }
+    &.l-yellow {
+      background: $yellow;
+    }
+    &.l-blue {
+      background: $blue;
+    }
+    &.l-green {
+      background: $green;
+    }
+    &.l-red {
+      background: $red;
+    }
+    &.l-beige {
+      background: $beige;
+    }
+  }
+  .content-block-label {
+    font-size: 14px;
+    // font-weight: normal;
+    // letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: $gray;
+    margin-bottom: 30px;
+  }
+  a.article-link {
+    display: block;
+    margin:0;
+    padding: 0;
+  }
+  article {
+    letter-spacing: 0.3px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: justify-content;
+    align-items: center;
+    margin: 30px 0;
+    &:first-child {
+      margin-top: 0;
+    }
+
+    .story-date-author {
+      font-size: 12px;
+      color: $gray;
+      margin-bottom: 5px;
+      margin: 5px 0 10px;
+      line-height:1;
+    }
+    p {
+      // font-weight: 300;
+    }
+    .sidebar & {
+      p {
+        font-size: 13px;
+      }
+    }
+
+    .article-image {
+      transition: 0.6s ease;
+      width: 100%;
+    }
+    .image {
+      overflow: hidden;
+      flex-basis: 100%;
+      max-width: 100%;
+      margin-bottom: 15px;
+      @media (min-width:400px) {
+        max-height:120px;
+        max-width:200px;
+        min-width:150px;
+        padding-right: 15px;
+      }
+      @media (min-width:660px) {
+        flex-basis: 200px;
+      }
+      @media (min-width:860px) {
+        flex-basis: 160px;
+      }
+      @media (min-width:900px) {
+        flex-basis: 170px;
+      }
+      @media (min-width:960px) {
+        flex-basis: 180px;
+      }
+      @media (min-width:1024px) {
+        flex-basis: 200px;
+      }
+      @media (min-width:1280px) {
+        padding-right: 30px;
+      }
+      img {
+        vertical-align: middle;
+        @media (min-width:400px) {
+          max-height:100%;
+          max-width:100%;
+        }
+      }
+    }
+    .text {
+      flex: 1 1 300px;
+      color: $base;
+    }
+    h4 {
+      transition: .3s ease;
+      color:$blue;
+      margin: 0;
+      // .helveticaNeueBold;
+      font-size: 1.3em;
+      line-height: 24px;
+      font-weight: bold;
+    }
+    &:hover {
+      .article-image {
+        transform: scale(1.03) rotate(0.1deg);
+        filter: brightness(120%) saturate(130%);
+      }
+    }
+    &.top-story {
+      margin: 0;
+      .image {
+        flex-basis: 100%;
+        max-width: 100%;
+      }
+      .caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: hsla(360, 0%, 0%, 0.7);
+        color: #fff;
+        padding: 15px 30px;
+        @media (max-width:992px) {
+          position: relative;
+          background: #000;
+        }
+        @media (max-width:479px) {
+          padding:15px;
+        }
+      }
+      .story-date-author {
+        color: #fff;
+      }
+    }
+  }
+  // &.listed-articles {
+    article {
+      margin: 15px 0;
+    }
+  // }
+}
+.show-more {
+  display: inline-block;
+  &:after {
+    content: 'More...';
+  }
+}
+.expandable {
+  display: none;
+  &.show {
+    display: inline-block;
+    & + .show-more {
+      &:after {
+        content: 'Less...';
+      }
+    }
+  }
+}
+.market-performance-card {
+  border: 1px solid lighten($gray, 50%);
+  max-width: 300px;
+  background: #fff;
+
+  // box-shadow: 0 1px 1px hsla(0,0%,0%,.3);
+  .mega-menu-wrapper & {
+    padding: 20px;
+    max-width:250px;
+    .market-table {
+      font-size: 14px;
+      .item {
+        padding: 7px 0;
+        .market-time-period {
+          font-size: 16px;
+        }
+        .market-value {
+          width: 50px;
+          font-size: 14px;
+          .fa {
+            font-size: 30px;
+            margin-top: -5px;
+          }
+        }
+      }
+    }
+    @media (max-width:1023px) {
+      display: none;
+    }
+  }
+}
+.market-table {
+  .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    .market-time-period {
+      font-size: 18px;
+      color: $gray;
+      flex: 1 1 50%;
+    }
+    .market-value {
+      position: relative;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1;
+      flex: 1 1 50%;
+      max-width: 50%;
+      text-align: right;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      span {
+        vertical-align: middle;
+      }
+      .fa {
+        opacity: 0.5;
+        font-size: 40px;
+        vertical-align: middle;
+        margin-left: 7.5px;
+        margin-top: -3px;
+      }
+      &.up {
+        color: darken($green, 10%);
+      }
+      &.down {
+        color: $red;
+      }
+    }
+    &:last-child {
+      border: none;
+    }
+  }
+}
+
+
+
+// @import "navigation";
+
+
+/* own stocks start */
+.own-stocks {
+  display: flex;
+  flex-direction: column;
+  @media (min-width:480px) {
+    flex-direction: row;
+    align-items: baseline;
+  }
+  .label {
+    padding-right: 15px;
+  }
+  .content {
+    flex:1;
+  }
+  .expandable + .show-more {
+    // margin: 0;
+  }
+  .expandable.show {
+    display:inline;
+  }
+  .expandable.show +.show-more {
+    display: block;
+    margin: 10px 0;
+  }
+}
+/* own stocks end */
+
+
+/* article page */
+#article-page .full_article {
+  padding: 1rem 0rem 2rem;
+}
+.main-content-section {
+  border: none;
+}
+.article-header {
+  float: none;
+  margin: 0;
+  width: 100%;
+}
+.article-body {
+  font-size: 16px;
+}
+.article-header header h1 {
+  font-family: inherit;
+}
+.article-header header h2 {
+  font-family: inherit;
+  margin: 0 0 15px;
+}
+.main-col {
+  width:100%;
+  float: none;
+  margin: 0;
+}
+.side-col {
+  display: none;
+}
+/* article page end*/
+
+
+/* footer */
+footer.footer {
+  display: none;
+}
+/* footer end */

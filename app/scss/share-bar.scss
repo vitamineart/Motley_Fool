@@ -1,0 +1,109 @@
+/* share box start */
+#share-box {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  transition: .3s ease;
+  @media (max-width:1023px) {
+    visibility: hidden;
+    transform: translateY(200%);
+    &.visible {
+      visibility: visible;
+      transform: none;
+    }
+  }
+  @media only screen
+  and (max-device-width: 737px)
+  and (orientation : landscape) {
+    display: none;
+  }
+  @media (min-width:1024px) {
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    flex-direction: column;
+    right: auto;
+    border: none;
+  }
+  &:hover {
+    .item {
+      filter: saturate(30%);
+    }
+  }
+  .item {
+    transition: .3s ease;
+    padding: 0 7.5px;
+    flex: 1;
+    // max-width: 200px;
+    text-align: center;
+    line-height:50px;
+    height: 50px;
+    color: #fff;
+    // display: none;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    @media (min-width:1024px) {
+      display: block;
+      height: 50px;
+      flex: 0 0 50px;
+      max-width: 50px;
+      padding: 0 15px;
+    }
+    &:hover, &:active, &:focus {
+      box-shadow: 0 0 50px hsla(360, 100%, 0%, 0.2) inset;
+      filter: saturate(150%) brightness(110%);
+      @media (min-width:1024px) {
+        line-height: 70px;
+        height:70px;
+      }
+    }
+    &#share-facebook {
+      background-color: #3B5998;
+    }
+    &#share-twitter {
+      background-color: #55ACEE;
+    }
+    &#share-google {
+      background-color: #DD4B39;
+    }
+    &#share-tumblr {
+      background-color: #35465C;
+    }
+    &#share-email {
+      background-color: #777777;
+    }
+    &#share-linkedin {
+      background-color: #0077B5;
+    }
+    &#next-article {
+      background-color: #f0f0f0;
+      color: #000;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 14px;
+      flex:1 1 auto;
+      @media (min-width:1024px) {
+        display: none;
+      }
+      .fa {
+        transition:.5s ease;
+        font-size: 13px;
+        margin-left: 5px;
+      }
+      &:hover, &:active, &:focus {
+        .fa {
+          transform: translateX(150%);
+        }
+      }
+    }
+  }
+}
+
+/* share box end */

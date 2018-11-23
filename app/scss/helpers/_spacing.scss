@@ -1,0 +1,208 @@
+$padding-basis: 30px !default;
+$small-padding-basis: $padding-basis !default;
+$medium-padding-basis: $padding-basis !default;
+$large-padding-basis: $padding-basis !default;
+$xl-padding-basis: $padding-basis !default;
+
+@mixin margin {
+	margin: $base-spacing;
+}
+
+@mixin margin-r {
+	margin-right: $base-spacing;
+}
+
+@mixin margin-l {
+	margin-left: $base-spacing;
+}
+
+@mixin margin-b {
+	margin-bottom: $base-spacing;
+}
+
+@mixin margin-t {
+	margin-top: $base-spacing;
+}
+
+@mixin margin-vertical {
+    margin: $base-spacing 0;
+}
+
+@mixin negative-margin-b {
+	margin-bottom: -$base-spacing;
+}
+
+@mixin negative-margin-r {
+	margin-right: -$base-spacing;
+}
+
+@mixin mid-margin-b {
+	margin-bottom: $base-spacing / 1.33;
+}
+
+@mixin half-margin {
+	margin: $base-spacing / 2;
+}
+
+@mixin half-margin-r {
+	margin-right: $base-spacing / 2;
+}
+
+@mixin half-margin-l {
+	margin-left: $base-spacing / 2;
+}
+
+@mixin half-margin-b {
+	margin-bottom: $base-spacing / 2;
+}
+
+@mixin half-margin-t {
+	margin-top: $base-spacing / 2;
+}
+
+@mixin half-margin-vertical {
+	margin: $base-spacing / 2 0;
+}
+
+@mixin little-margin {
+	margin: $base-spacing / 4;
+}
+
+@mixin little-margin-r {
+	margin-right: $base-spacing / 4;
+}
+
+@mixin little-margin-l {
+	margin-left: $base-spacing / 4;
+}
+
+@mixin little-margin-b {
+	margin-bottom: $base-spacing / 4;
+}
+
+@mixin little-margin-t {
+	margin-top: $base-spacing / 4;
+}
+
+@mixin little-margin-vertical {
+	margin: $base-spacing / 4 0;
+}
+
+@mixin custom-margin($property, $multiplier){
+	#{$property}: $base-spacing * $multiplier;
+}
+
+@mixin padding {
+	padding: $base-spacing;
+}
+
+@mixin padding-r {
+	padding-right: $base-spacing;
+}
+
+@mixin padding-l {
+	padding-left: $base-spacing;
+}
+
+@mixin padding-b {
+	padding-bottom: $base-spacing;
+}
+
+@mixin padding-t {
+	padding-top: $base-spacing;
+}
+
+@mixin padding-horizontal {
+	padding: 0 $base-spacing;
+}
+
+@mixin padding-vertical {
+	padding: $base-spacing 0;
+}
+
+@mixin half-padding {
+	padding: $base-spacing / 2;
+}
+
+@mixin half-padding-r {
+	padding-right: $base-spacing / 2;
+}
+
+@mixin half-padding-l {
+	padding-left: $base-spacing / 2;
+}
+
+@mixin half-padding-b {
+	padding-bottom: $base-spacing / 2;
+}
+
+@mixin half-padding-t {
+	padding-top: $base-spacing / 2;
+}
+
+@mixin half-padding-horizontal {
+	padding: 0 $base-spacing / 2;
+}
+
+@mixin half-padding-vertical {
+	padding: $base-spacing / 2 0;
+}
+
+@mixin top {
+	top: $base-spacing;
+}
+
+@mixin half-top {
+	top: $base-spacing / 2;
+}
+
+@mixin flush-t {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+@mixin flush-b {
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+@mixin flush {
+	padding: 0;
+	margin: 0;
+}
+
+@mixin page-section-padding($property-name: "padding") {
+	#{$property-name}: 6.6666666%;
+
+    @include respond-to-medium {
+        #{$property-name}: 4%;
+    }
+
+    @include respond-to-large {
+        #{$property-name}: 4%;
+    }
+
+    @include respond-to-xl {
+        #{$property-name}: 3.225806451%;
+    }
+}
+
+@mixin page-section-padding-no-top {
+   padding: 6.6666666%;
+   padding-top: 0;
+
+    @include respond-to-medium {
+        padding: 4%;
+        padding-top: 0%;
+    }
+
+    @include respond-to-large {
+        padding: 4%;
+        padding-top: 0%;
+    }
+
+    @include respond-to-xl {
+        padding: 3.225806451%;
+        padding-top: 0%;
+    }
+}

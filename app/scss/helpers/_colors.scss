@@ -1,0 +1,89 @@
+//////////////////////////////////////////////
+// COLOR HELPERS
+//////////////////////////////////////////////
+
+
+// color variables
+$black: #000;
+$white: #fff;
+$base: #333;
+$gray: #666;
+$blue: #336699;
+$darkBlue: #204060;
+$yellow: #FFCC33;
+$green: #339933;
+$red: #CC3300;
+$beige: #FFCC99;
+
+
+// Layout
+$body-bg-color: #f9f9f9 !default;
+
+
+// Pos & Neg
+$pos-color: #071 !default;
+$neg-color: #B00 !default;
+
+
+//Table Colors
+$data-table-header-color: #666 !default;
+$data-table-border-color: #c8cfd2 !default;
+$data-table-row-color: #e6e9ec !default;
+$data-table-row-stripe-color: #F6F7F8 !default;
+$data-table-hover-color: #E5F7FB !default;
+
+
+// Alerts
+$alert-danger: #B94A48;
+$alert-warning: #C09853;
+$alert-info: #3A87AD;
+$alert-success: #468847;
+
+
+// Premium Services
+$usmf-main-color: #07a;
+$premium-service-colors: (
+	one: #224f78,	//1255
+	options: #298,	//1321, 50
+	pro: #076,		//1228
+	rb: #d51,		//1069
+	ryr: #469,		//1062
+	sa: #248ab6,	//1081
+	so: #124,		//1371, 52
+	sn: #0c4070		//1502
+);
+
+
+// Needing to be gone through ~GR
+$border-color: #bdbdbd !default;
+$secondary-border-color: #f2f2f2 !default;
+
+$main-color: #0077aa !default;
+$link-color: #0077aa !default;
+$visited-link-color: #43689c !default;
+
+$info-color: #aaaaaa !default;
+$muted-color: #999999 !default;
+
+$headline-color: #222222 !default;
+$lede-color: #888888 !default;
+$body-text-color: #444444 !default;
+$pull-quote-color: #909090 !default;
+
+
+$stock-advisor-color: #0080b2;
+$rule-breakers-color: #d45300;
+$market-pass-color: #5b0a0a;
+$rule-your-retirement-color: #446699;
+$total-income-color: #0099ff;
+$explorer-color: #003366;
+$pro-color: #007766;
+$supernova-color: #003366;
+$premier-pass-color: #660000;
+$one-color: #41241C;
+$options-color: #257282;
+$wealth-defender-color: #02893b;
+$global-partners: #005329;
+$marijuana-masters: #34c73b;
+$everlasting-stocks: #757030;
+

@@ -1,0 +1,1757 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  background-color: #f0f0f0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+#services .page-title-header {
+  margin: 15px 15px 0;
+  padding: 15px 15px 0;
+}
+
+@media (min-width: 860px) {
+  #services .page-title-header {
+    padding: 30px 30px 15px;
+  }
+}
+
+@media (max-width: 660px) {
+  #services .page-title-header {
+    margin: 0;
+  }
+}
+
+#services h1 {
+  color: #000;
+}
+
+.service-panel {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin: 15px;
+  padding: 0;
+}
+
+.service-panel .btn {
+  display: inline-block;
+  transition: .3s ease;
+  font-size: 18px;
+  height: 49px;
+  line-height: 49px;
+  font-weight: 500;
+  text-transform: none;
+  margin: 15px 0;
+  padding: 0 30px;
+  box-shadow: inset 0 1px 0 0 #fff, 0 1px 1px 0 rgba(0, 0, 0, 0);
+  border-radius: 3px;
+  background-clip: padding-box;
+  color: #333;
+  background-color: #fcca31;
+  background-image: linear-gradient(#fcca31, #dea803);
+  border: 1px solid #dea803;
+}
+
+.service-panel .btn:hover {
+  box-shadow: inset 0 25px 0 0 rgba(255, 255, 255, 0.5), 0 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 860px) {
+  .service-panel .btn {
+    margin: 25px 0;
+  }
+}
+
+.service-flex-cols {
+  display: flex;
+}
+
+@media (max-width: 1023px) {
+  .service-flex-cols {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+
+.service-flex-cols .col {
+  flex-basis: 100%;
+}
+
+@media (min-width: 660px) {
+  .service-flex-cols .col {
+    flex-basis: 50%;
+  }
+}
+
+@media (max-width: 1023px) {
+  .service-flex-cols.top {
+    text-align: left;
+  }
+}
+
+@media (min-width: 660px) {
+  .service-flex-cols.top {
+    border-bottom: 1px solid #eee;
+  }
+}
+
+@media (max-width: 1023px) {
+  .service-flex-cols.top .col {
+    padding: 0;
+  }
+}
+
+.service-flex-cols.top .disclosure {
+  font-size: 12px;
+  color: #696969;
+  padding: 10px 15px;
+  line-height: 1.2;
+}
+
+@media (min-width: 660px) {
+  .service-flex-cols.top .disclosure {
+    padding: 0 15px 10px;
+  }
+}
+
+.service-flex-cols.advantages .col.graph {
+  background-color: #fafafa;
+  color: #696969;
+  font-size: 13px;
+  padding: 15px;
+}
+
+@media (min-width: 860px) {
+  .service-flex-cols.advantages .col.graph {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 660px) {
+  .service-flex-cols.advantages {
+    flex-direction: column;
+  }
+}
+
+.service-flex-cols.bottom {
+  border: none;
+  padding: 10px 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-flex-cols.bottom .btn {
+  margin: 10px 0;
+}
+
+.service-header {
+  display: flex;
+  align-items: baseline;
+  position: relative;
+  padding: 15px;
+}
+
+.service-header:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -15px;
+  border-style: solid;
+  height: 0;
+  width: 0;
+  border-color: #336699 transparent transparent;
+  border-width: 30px 15px 0;
+}
+
+@media (max-width: 659px) {
+  .service-header:after {
+    border-style: solid;
+    height: 0;
+    width: 0;
+    border-color: #336699 transparent transparent;
+    border-width: 35px 17.5px 0;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+
+#stock-advisor .service-header:after {
+  border-top-color: #0092cc;
+}
+
+#rule-breakers .service-header:after {
+  border-top-color: #ee5d00;
+}
+
+#hidden-gems .service-header:after {
+  border-top-color: #438e45;
+}
+
+#income-investor .service-header:after {
+  border-top-color: #26a2b6;
+}
+
+#inside-value .service-header:after {
+  border-top-color: #cd9100;
+}
+
+#rule-your-retirement .service-header:after {
+  border-top-color: #4c72ab;
+}
+
+#total-income .service-header:after {
+  border-top-color: #1aa3ff;
+}
+
+#million-dollar-portfolio .service-header:after {
+  border-top-color: #7f3f9e;
+}
+
+#explorer .service-header:after {
+  border-top-color: #004080;
+}
+
+#pro .service-header:after {
+  border-top-color: #00917c;
+}
+
+#supernova .service-header:after {
+  border-top-color: #004080;
+}
+
+#premier-pass .service-header:after {
+  border-top-color: maroon;
+}
+
+#one .service-header:after {
+  border-top-color: #532e24;
+}
+
+#options .service-header:after {
+  border-top-color: #2b8396;
+}
+
+#market-pass .service-header:after {
+  border-top-color: #720d0d;
+}
+
+#wealth-defender .service-header:after {
+  border-top-color: #02a246;
+}
+
+@media (min-width: 860px) {
+  .service-header {
+    align-items: center;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 659px) {
+  .service-header {
+    padding: 15px 20px;
+  }
+}
+
+.service-info {
+  position: relative;
+  font-size: 14px;
+}
+
+.service-info .expandable {
+  position: absolute;
+  visibility: hidden;
+  display: block !important;
+  opacity: 0;
+  top: 30px;
+  left: -50px;
+  z-index: 1;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 3px 10px #bbb;
+  transition: .3s ease;
+}
+
+@media (min-width: 660px) {
+  .service-info .expandable {
+    padding: 10px 20px;
+  }
+}
+
+.service-info .expandable.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.service-info .expandable.show + .show-more:after {
+  content: 'Less info...';
+}
+
+.service-info .show-more {
+  font-size: 13px;
+}
+
+.service-info .show-more:after {
+  content: 'More info...';
+}
+
+.service-header-image {
+  border-radius: 5px;
+  text-align: center;
+  padding-left: 7px;
+  padding-right: 7px;
+  min-width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  margin-right: 10px;
+  flex: 0 0 auto;
+  font-size: 16px;
+}
+
+@media (min-width: 860px) {
+  .service-header-image {
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+  }
+}
+
+@media (min-width: 860px) {
+  .service-header-image {
+    font-size: 24px;
+  }
+}
+
+#stock-advisor .service-header-image {
+  background: #0080b2;
+  background-image: linear-gradient(#009ad6, #0080b2);
+}
+
+#rule-breakers .service-header-image {
+  background: #d45300;
+  background-image: linear-gradient(#f86100, #d45300);
+}
+
+#hidden-gems .service-header-image {
+  background: #3b7d3d;
+  background-image: linear-gradient(#469549, #3b7d3d);
+}
+
+#income-investor .service-header-image {
+  background: #228fa1;
+  background-image: linear-gradient(#28a9be, #228fa1);
+}
+
+#inside-value .service-header-image {
+  background: #b37f00;
+  background-image: linear-gradient(#d79800, #b37f00);
+}
+
+#rule-your-retirement .service-header-image {
+  background: #446699;
+  background-image: linear-gradient(#5077b1, #446699);
+}
+
+#total-income .service-header-image {
+  background: #0099ff;
+  background-image: linear-gradient(#24a7ff, #0099ff);
+}
+
+#million-dollar-portfolio .service-header-image {
+  background: #70388C;
+  background-image: linear-gradient(#8442a6, #70388C);
+}
+
+#explorer .service-header-image {
+  background: #003366;
+  background-image: linear-gradient(#00458a, #003366);
+}
+
+#pro .service-header-image {
+  background: #007766;
+  background-image: linear-gradient(#009b85, #007766);
+}
+
+#supernova .service-header-image {
+  background: #003366;
+  background-image: linear-gradient(#00458a, #003366);
+}
+
+#premier-pass .service-header-image {
+  background: #660000;
+  background-image: linear-gradient(#8a0000, #660000);
+}
+
+#one .service-header-image {
+  background: #41241C;
+  background-image: linear-gradient(#5a3227, #41241C);
+}
+
+#options .service-header-image {
+  background: #257282;
+  background-image: linear-gradient(#2d8a9e, #257282);
+}
+
+#market-pass .service-header-image {
+  background: #5b0a0a;
+  background-image: linear-gradient(#7b0e0e, #5b0a0a);
+}
+
+#wealth-defender .service-header-image {
+  background: #02893b;
+  background-image: linear-gradient(#03ac4a, #02893b);
+}
+
+.service-header-content {
+  flex: 1 1 auto;
+}
+
+.service-panel-title {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0;
+}
+
+#stock-advisor .service-panel-title {
+  color: #0080b2;
+}
+
+#rule-breakers .service-panel-title {
+  color: #d45300;
+}
+
+#hidden-gems .service-panel-title {
+  color: #3b7d3d;
+}
+
+#income-investor .service-panel-title {
+  color: #228fa1;
+}
+
+#inside-value .service-panel-title {
+  color: #b37f00;
+}
+
+#rule-your-retirement .service-panel-title {
+  color: #446699;
+}
+
+#total-income .service-panel-title {
+  color: #0099ff;
+}
+
+#million-dollar-portfolio .service-panel-title {
+  color: #70388C;
+}
+
+#explorer .service-panel-title {
+  color: #003366;
+}
+
+#pro .service-panel-title {
+  color: #007766;
+}
+
+#supernova .service-panel-title {
+  color: #003366;
+}
+
+#premier-pass .service-panel-title {
+  color: #660000;
+}
+
+#one .service-panel-title {
+  color: #41241C;
+}
+
+#options .service-panel-title {
+  color: #257282;
+}
+
+#market-pass .service-panel-title {
+  color: #5b0a0a;
+}
+
+#wealth-defender .service-panel-title {
+  color: #02893b;
+}
+
+.service-panel-subtitle {
+  font-size: 13px;
+  line-height: 1.2;
+  color: #696969;
+  margin-top: 5px;
+}
+
+.service-panel-subtitle p {
+  margin: 0;
+}
+
+.service-panel-description {
+  margin: 15px;
+  font-size: 13px;
+  color: #666;
+}
+
+.service-panel-features {
+  padding: 0 15px;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+@media (min-width: 860px) {
+  .service-panel-features {
+    padding: 30px;
+  }
+}
+
+.service-panel-features .item {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #696969;
+}
+
+@media (min-width: 860px) {
+  .service-panel-features .item {
+    margin: 15px 0;
+  }
+}
+
+.service-panel-features .item header {
+  font-weight: bold;
+  font-size: 16px;
+  color: #000;
+  position: relative;
+  padding-left: 30px;
+}
+
+@media (min-width: 860px) {
+  .service-panel-features .item header {
+    font-size: 18px;
+  }
+}
+
+.service-panel-features .item header:before {
+  content: '\f058';
+  font-family: FontAwesome;
+  font-size: 20px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #66ac66;
+}
+
+.service-panel-features .item .fa {
+  color: #018BC2;
+  font-size: 21px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.service-panel-features .item p {
+  padding-left: 31px;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+@media (min-width: 860px) {
+  .service-panel-features .item p {
+    font-size: 16px;
+    margin-top: 5px;
+  }
+}
+
+.service-price {
+  font-size: 18px;
+  margin: 15px 0 0;
+}
+
+@media (min-width: 860px) {
+  .service-price {
+    margin: 30px 0 0;
+  }
+}
+
+.service-price b {
+  font-size: 23px;
+}
+
+.service-panel-return {
+  display: flex;
+  margin: auto;
+  margin: 0 15px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+@media (min-width: 660px) {
+  .service-panel-return {
+    border: none;
+    margin: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .service-panel-return {
+    justify-content: flex-start;
+  }
+}
+
+.service-panel-return .item {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 300;
+  position: relative;
+  padding: 15px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 660px) {
+  .service-panel-return .item {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 860px) {
+  .service-panel-return .item {
+    padding: 30px;
+  }
+}
+
+.service-panel-return .item:first-child:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  height: 40%;
+  width: 1px;
+  background-color: #eee;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.service-panel-return .item .value {
+  font-weight: 400;
+  font-size: 26px;
+}
+
+@media (min-width: 660px) {
+  .service-panel-return .item .value {
+    font-size: 27px;
+  }
+}
+
+@media (min-width: 860px) {
+  .service-panel-return .item .value {
+    font-size: 39px;
+  }
+}
+
+.service-panel-return .item.S_P {
+  color: #333;
+}
+
+.service-panel-return .item.return {
+  color: #2b812b;
+}
+
+.service-panel-image {
+  padding: 0;
+  background-color: #fafafa;
+  margin-bottom: 30px;
+}
+
+.service-panel-image .image-title {
+  font-size: 20px;
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+#stock-advisor .service-panel-image .image-title {
+  color: #006a93;
+}
+
+#rule-breakers .service-panel-image .image-title {
+  color: #b54700;
+}
+
+#hidden-gems .service-panel-image .image-title {
+  color: #316833;
+}
+
+#income-investor .service-panel-image .image-title {
+  color: #1d7988;
+}
+
+#inside-value .service-panel-image .image-title {
+  color: #946900;
+}
+
+#rule-your-retirement .service-panel-image .image-title {
+  color: #3b5884;
+}
+
+#total-income .service-panel-image .image-title {
+  color: #0087e0;
+}
+
+#million-dollar-portfolio .service-panel-image .image-title {
+  color: #5f2f76;
+}
+
+#explorer .service-panel-image .image-title {
+  color: #002447;
+}
+
+#pro .service-panel-image .image-title {
+  color: #00584c;
+}
+
+#supernova .service-panel-image .image-title {
+  color: #002447;
+}
+
+#premier-pass .service-panel-image .image-title {
+  color: #470000;
+}
+
+#one .service-panel-image .image-title {
+  color: #2c1813;
+}
+
+#options .service-panel-image .image-title {
+  color: #1e5d6a;
+}
+
+#market-pass .service-panel-image .image-title {
+  color: #3f0707;
+}
+
+#wealth-defender .service-panel-image .image-title {
+  color: #026b2e;
+}
+
+.sp-graph {
+  height: auto;
+}
+
+.cs-services-container {
+  background-color: #fff;
+  padding: 30px 15px;
+}
+
+@media (min-width: 860px) {
+  .cs-services-container {
+    padding: 30px;
+  }
+}
+
+.cs-services-container .page-title-header {
+  margin-bottom: 15px;
+}
+
+.cs-services-container .page-title-header h1 {
+  font-size: 50px;
+  line-height: 0.9;
+}
+
+.cs-services-container .promo-text {
+  color: #696969;
+  font-size: 14px;
+}
+
+.cs-services-container:after {
+  content: 'No items were found matching the selected filters. Please try again.';
+  font-weight: 700;
+  color: #336699;
+  transition: .3s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.cs-services-container.mixitup-container-failed {
+  position: relative;
+}
+
+.cs-services-container.mixitup-container-failed:after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cs-services-flex-container {
+  min-height: 710px;
+  background-color: #fff;
+}
+
+@media (min-width: 860px) {
+  .cs-services-flex-container {
+    display: flex;
+    align-items: stretch;
+  }
+}
+
+.cs-services-flex-container .cs-services-nav {
+  padding: 15px;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  right: 0;
+  height: 170px;
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-top: 1px solid #ddd;
+  background-color: #336699;
+}
+
+@media (min-width: 860px) {
+  .cs-services-flex-container .cs-services-nav {
+    position: relative;
+    width: 300px;
+    height: auto;
+  }
+  .cs-services-flex-container .cs-services-nav .cs-services-nav-btns {
+    position: fixed;
+    top: 115px;
+    bottom: 0;
+  }
+}
+
+.cs-services-content {
+  flex: 1;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.cs-services-nav-group-header {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  text-align: center;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 1px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.cs-services-nav-group {
+  display: flex;
+  justify-content: center;
+}
+
+.cs-services-nav-btn {
+  border-radius: 5px;
+  min-height: 50px;
+  min-width: 50px;
+  flex: 0 0 50px;
+  margin: 2px;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #fff;
+  color: #336699;
+  transition: .3s ease;
+}
+
+.cs-services-nav-btn.active {
+  font-weight: bold;
+  background-color: #FFCC33;
+  box-shadow: inset 0 1px 2px #336699;
+}
+
+.cs-services-content-item {
+  padding: 15px 15px 30px 15px;
+  box-shadow: 0 1px 1px #ddd;
+  margin: 0 0 30px 0;
+}
+
+.cs-services-content-item h4 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: #696969;
+}
+
+@media (max-width: 660px) {
+  .cs-services-content-item h4 {
+    font-size: 18px;
+  }
+}
+
+.cs-services-content-item:last-child {
+  box-shadow: none;
+}
+
+.cs-services-content-header {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.cs-services-content-header .image {
+  vertical-align: middle;
+}
+
+@media (max-width: 660px) {
+  .cs-services-content-header .image {
+    width: 40px;
+  }
+}
+
+.cs-services-content-header .text {
+  padding-left: 7px;
+  line-height: 1;
+  font-size: 14px;
+}
+
+.cs-services-content-header h1 {
+  margin: 0;
+  letter-spacing: -1px;
+  left: -1px;
+  position: relative;
+  font-size: 27px;
+  line-height: 0.9;
+}
+
+@media (min-width: 660px) {
+  .cs-services-content-header h1 {
+    font-size: 46px;
+    line-height: 0.8;
+  }
+}
+
+.cs-services-filter {
+  margin-bottom: 30px;
+}
+
+.cs-services-filter-group-header {
+  margin-right: 25px;
+  font-weight: 500;
+}
+
+.cs-services-filter-group {
+  margin: 7px 0;
+}
+
+@media (min-width: 480px) {
+  .cs-services-filter-group {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.cs-services-filter-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin: 2px;
+  width: 100%;
+  color: #696969;
+  padding: 10px 16px;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+  box-shadow: 0 2px 0 0px #ddd;
+  outline: none;
+  transition: 0.15s;
+}
+
+.cs-services-filter-item:active {
+  background-color: #3c8cdd !important;
+  color: #fff !important;
+  box-shadow: 0 0px 0 0 #264d73 !important;
+}
+
+.cs-services-filter-item:hover {
+  background-color: #fbfcfe;
+  color: inherit;
+}
+
+.cs-services-filter-item.mixitup-control-active {
+  background-color: #4080bf;
+  color: #fff;
+  border: 1px solid #264d73;
+  box-shadow: 0 2px 0 0 #264d73;
+}
+
+@media (min-width: 480px) {
+  .cs-services-filter-item {
+    width: auto;
+  }
+}
+
+ul.cs-services-content-advantages {
+  padding: 5px 0;
+}
+
+@media (min-width: 860px) {
+  ul.cs-services-content-advantages {
+    padding: 15px;
+  }
+}
+
+ul.cs-services-content-advantages li {
+  position: relative;
+  padding-left: 25px;
+  line-height: 1.6;
+}
+
+ul.cs-services-content-advantages li:before {
+  content: '\f058';
+  font-family: FontAwesome;
+  font-size: 20px;
+  position: absolute;
+  left: 0;
+  top: -2px;
+  color: #66ac66;
+}
+
+#services-matrix {
+  background-color: #fff;
+  color: #111;
+  padding: 30px;
+}
+
+@media (max-width: 860px) {
+  #services-matrix {
+    padding: 15px;
+  }
+}
+
+#services-matrix .promo-text {
+  font-size: 14px;
+}
+
+table .expando {
+  display: none;
+  background-color: #fff;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+  z-index: 100;
+}
+
+table .expando .full-info {
+  padding: 30px;
+  border: none;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #666;
+}
+
+table .expando .full-info p {
+  margin-bottom: 15px;
+}
+
+table.more-details {
+  background-color: #fff;
+}
+
+@media (max-width: 860px) {
+  table.more-details {
+    margin-bottom: 0;
+  }
+}
+
+table.more-details button.more-details .fa {
+  transform: rotate(180deg);
+}
+
+table.more-details + .expando {
+  display: block;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 860px) {
+  table.more-details + .expando {
+    display: table-row;
+  }
+}
+
+@media (min-width: 860px) {
+  table.more-details .services-matrix-table-cell {
+    border-top: 1px solid #666;
+  }
+}
+
+.services-matrix-table {
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+.services-matrix-table-row {
+  background-color: #fafafa;
+  text-align: center;
+}
+
+@media (max-width: 859px) {
+  .services-matrix-table-row {
+    margin-bottom: 20px;
+    display: block;
+    box-shadow: 0 1px 0 0px #ddd;
+    border-bottom: none;
+  }
+}
+
+.services-matrix-table-row:first-child {
+  background-color: #fff;
+  color: #666;
+  font-weight: bold;
+}
+
+.services-matrix-table-row:first-child .services-matrix-table-cell {
+  font-size: 16px;
+}
+
+@media (max-width: 859px) {
+  .services-matrix-table-row:first-child {
+    display: none;
+  }
+}
+
+.services-matrix-table-cell {
+  padding: 30px;
+  vertical-align: middle;
+  border-left: none;
+  border-right: none;
+}
+
+@media (max-width: 859px) {
+  .services-matrix-table-cell {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-bottom: none;
+  }
+}
+
+.services-matrix-table-cell.service-name {
+  font-size: 29px;
+  letter-spacing: -0.5px;
+  font-weight: 400;
+}
+
+.services-matrix-table-cell.cost {
+  font-size: 20px;
+  background-color: #e7f7e7;
+}
+
+.more-details .services-matrix-table-cell.cost {
+  background-color: #9bde9b;
+}
+
+.services-matrix-table-cell.detailed-info .btn {
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: none;
+  font-family: inherit;
+  margin: 0;
+  background: transparent;
+  color: #666;
+  border-color: #666;
+  box-shadow: none;
+}
+
+.services-matrix-table-cell.detailed-info .btn .fa {
+  font-size: 11px;
+  margin-left: 5px;
+}
+
+#hp-services {
+  padding: 15px;
+  margin: 30px 0;
+  background-color: #89c6f1;
+  background-image: linear-gradient(45deg, #4BC3B5, #489BE2);
+}
+
+#hp-services > p {
+  color: #fff;
+}
+
+#hp-services h2 {
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 1.1;
+  font-size: 24px;
+}
+
+@media (min-width: 860px) {
+  #hp-services h2 {
+    font-size: 32px;
+    line-height: 1.5;
+  }
+}
+
+@media (min-width: 660px) {
+  #hp-services {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 860px) {
+  #hp-services {
+    padding: 30px;
+  }
+}
+
+.hp-services-tabs {
+  margin-top: 30px;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+.hp-service-tab {
+  position: relative;
+  flex: 1;
+  border: 1px solid #ececec;
+  background-color: #f8f8f8;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 80px;
+  padding: 0px 5px 7px;
+  transition: .3s ease-out;
+}
+
+@media (min-width: 480px) {
+  .hp-service-tab {
+    padding: 10px;
+  }
+}
+
+@media (min-width: 660px) {
+  .hp-service-tab {
+    min-height: 135px;
+  }
+}
+
+@media (min-width: 860px) {
+  .hp-service-tab {
+    padding: 30px 15px;
+  }
+}
+
+.hp-service-tab:after {
+  content: '';
+  z-index: 0;
+  position: absolute;
+  border-radius: 5px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+  border-top: 4px solid #fff;
+}
+
+.hp-service-tab#stock-advisor-tab:after {
+  background: #0080b2;
+  background-image: linear-gradient(#009ad6, #0080b2);
+}
+
+.hp-service-tab#rule-breakers-tab:after {
+  background: #d45300;
+  background-image: linear-gradient(#f86100, #d45300);
+}
+
+.hp-service-tab#hidden-gems-tab:after {
+  background: #3b7d3d;
+  background-image: linear-gradient(#469549, #3b7d3d);
+}
+
+.hp-service-tab#income-investor-tab:after {
+  background: #228fa1;
+  background-image: linear-gradient(#28a9be, #228fa1);
+}
+
+.hp-service-tab#inside-value-tab:after {
+  background: #b37f00;
+  background-image: linear-gradient(#d79800, #b37f00);
+}
+
+.hp-service-tab#rule-your-retirement-tab:after {
+  background: #446699;
+  background-image: linear-gradient(#5077b1, #446699);
+}
+
+.hp-service-tab#total-income-tab:after {
+  background: #0099ff;
+  background-image: linear-gradient(#24a7ff, #0099ff);
+}
+
+.hp-service-tab#million-dollar-portfolio-tab:after {
+  background: #70388C;
+  background-image: linear-gradient(#8442a6, #70388C);
+}
+
+.hp-service-tab#explorer-tab:after {
+  background: #003366;
+  background-image: linear-gradient(#00458a, #003366);
+}
+
+.hp-service-tab#pro-tab:after {
+  background: #007766;
+  background-image: linear-gradient(#009b85, #007766);
+}
+
+.hp-service-tab#supernova-tab:after {
+  background: #003366;
+  background-image: linear-gradient(#00458a, #003366);
+}
+
+.hp-service-tab#premier-pass-tab:after {
+  background: #660000;
+  background-image: linear-gradient(#8a0000, #660000);
+}
+
+.hp-service-tab#one-tab:after {
+  background: #41241C;
+  background-image: linear-gradient(#5a3227, #41241C);
+}
+
+.hp-service-tab#options-tab:after {
+  background: #257282;
+  background-image: linear-gradient(#2d8a9e, #257282);
+}
+
+.hp-service-tab#market-pass-tab:after {
+  background: #5b0a0a;
+  background-image: linear-gradient(#7b0e0e, #5b0a0a);
+}
+
+.hp-service-tab#wealth-defender-tab:after {
+  background: #02893b;
+  background-image: linear-gradient(#03ac4a, #02893b);
+}
+
+.hp-service-tab:hover .hp-service-tab-label:after {
+  transform: scale(1.1);
+}
+
+.hp-service-tab.active {
+  z-index: 100;
+}
+
+.hp-service-tab.active:after {
+  opacity: 1;
+  border-radius: 0;
+  transform: scaleY(1.25) scaleX(1.01);
+}
+
+.hp-service-tab.active .hp-service-tab-label:after {
+  content: none;
+}
+
+.hp-service-tab-label {
+  text-align: center;
+  color: #fff;
+  position: relative;
+  min-width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+@media (min-width: 480px) {
+  .hp-service-tab-label {
+    font-size: 18px;
+    min-width: 35px;
+    height: 35px;
+    line-height: 35px;
+    min-width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
+}
+
+@media (min-width: 500px) {
+  .hp-service-tab-label {
+    font-size: 23px;
+    min-width: 55px;
+    height: 55px;
+    line-height: 55px;
+  }
+}
+
+@media (min-width: 660px) {
+  .hp-service-tab-label {
+    font-size: 26px;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-weight: bold;
+  }
+}
+
+.hp-service-tab-label span {
+  position: relative;
+  z-index: 1;
+}
+
+.hp-service-tab-label:after {
+  content: '';
+  z-index: 0;
+  position: absolute;
+  transition: 0.3s ease-out;
+  border-radius: 5px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+
+#stock-advisor-tab .hp-service-tab-label:after {
+  background: #0080b2;
+  background-image: linear-gradient(#009ad6, #0080b2);
+}
+
+#rule-breakers-tab .hp-service-tab-label:after {
+  background: #d45300;
+  background-image: linear-gradient(#f86100, #d45300);
+}
+
+#hidden-gems-tab .hp-service-tab-label:after {
+  background: #3b7d3d;
+  background-image: linear-gradient(#469549, #3b7d3d);
+}
+
+#income-investor-tab .hp-service-tab-label:after {
+  background: #228fa1;
+  background-image: linear-gradient(#28a9be, #228fa1);
+}
+
+#inside-value-tab .hp-service-tab-label:after {
+  background: #b37f00;
+  background-image: linear-gradient(#d79800, #b37f00);
+}
+
+#rule-your-retirement-tab .hp-service-tab-label:after {
+  background: #446699;
+  background-image: linear-gradient(#5077b1, #446699);
+}
+
+#total-income-tab .hp-service-tab-label:after {
+  background: #0099ff;
+  background-image: linear-gradient(#24a7ff, #0099ff);
+}
+
+#million-dollar-portfolio-tab .hp-service-tab-label:after {
+  background: #70388C;
+  background-image: linear-gradient(#8442a6, #70388C);
+}
+
+#explorer-tab .hp-service-tab-label:after {
+  background: #003366;
+  background-image: linear-gradient(#00458a, #003366);
+}
+
+#pro-tab .hp-service-tab-label:after {
+  background: #007766;
+  background-image: linear-gradient(#009b85, #007766);
+}
+
+#supernova-tab .hp-service-tab-label:after {
+  background: #003366;
+  background-image: linear-gradient(#00458a, #003366);
+}
+
+#premier-pass-tab .hp-service-tab-label:after {
+  background: #660000;
+  background-image: linear-gradient(#8a0000, #660000);
+}
+
+#one-tab .hp-service-tab-label:after {
+  background: #41241C;
+  background-image: linear-gradient(#5a3227, #41241C);
+}
+
+#options-tab .hp-service-tab-label:after {
+  background: #257282;
+  background-image: linear-gradient(#2d8a9e, #257282);
+}
+
+#market-pass-tab .hp-service-tab-label:after {
+  background: #5b0a0a;
+  background-image: linear-gradient(#7b0e0e, #5b0a0a);
+}
+
+#wealth-defender-tab .hp-service-tab-label:after {
+  background: #02893b;
+  background-image: linear-gradient(#03ac4a, #02893b);
+}
+
+.hp-service-tab-name {
+  position: relative;
+  z-index: 1;
+  line-height: 1.1;
+  text-align: center;
+  margin-top: 7px;
+  font-size: 12px;
+}
+
+@media (min-width: 860px) {
+  .hp-service-tab-name {
+    margin-top: 15px;
+    font-size: 15px;
+  }
+}
+
+.active .hp-service-tab-name {
+  color: #fff;
+}
+
+.hp-services-tabs-content {
+  width: 100%;
+  position: relative;
+  transition: .5s ease;
+  margin-bottom: 30px;
+  box-shadow: 0 3px 4px #777;
+}
+
+.hp-services-tabs-content .service-panel {
+  width: 100%;
+  display: none;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  margin: 0;
+}
+
+.hp-services-tabs-content .service-panel.active {
+  display: block;
+  z-index: 101;
+}
+
+.hp-services-volatility {
+  position: relative;
+  z-index: 100;
+  background-color: #fff;
+  padding-top: 10px;
+}
+
+.hp-services-volatility-graph {
+  display: flex;
+  align-items: flex-end;
+  padding: 0 2px;
+}
+
+.hp-services-volatility-graph-group {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+}
+
+.hp-services-volatility-graph-group-item {
+  transition: 0.3s ease 0.1s;
+  margin: 1.5px;
+  background-color: #f2f2f2;
+  flex: 1;
+  min-height: 12px;
+}
+
+@media (min-width: 660px) {
+  .hp-services-volatility-graph-group-item {
+    min-height: 20px;
+  }
+}
+
+@media (max-width: 659px) {
+  .hp-services-volatility-graph-group-item:nth-child(3n) {
+    display: none;
+  }
+}
+
+.active .hp-services-volatility-graph-group-item {
+  background-color: #bebebe;
+}
+
+.hp-services-volatility-labels {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hp-services-volatility-label {
+  font-size: 13px;
+  padding: 4px 0 7px;
+}
+
+.hp-services-volatility-label:before, .hp-services-volatility-label:after {
+  font-family: FontAwesome;
+  padding: 10px;
+  color: #bebebe;
+}
+
+.hp-services-volatility-label.lower:before {
+  content: '\f060';
+}
+
+.hp-services-volatility-label.higher:after {
+  content: '\f061';
+}
+
+.hp-services-disclosure a {
+  color: #fff;
+}
+
+.search-tools {
+  background: #f6f6f6;
+  border: 1px solid gainsboro;
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.618em 0.809em;
+  width: 100%;
+}
+
+.search-tools::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.search-tools li {
+  font-size: 0.8em;
+  line-height: 1.5em;
+  list-style: none;
+}
+
+.search-tools label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.375em;
+}
+
+.search-tools .filters {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media screen and (min-width: 53.75em) {
+  .search-tools .filters {
+    flex-direction: row;
+  }
+}
+
+.search-tools .filter {
+  flex-grow: 1;
+  flex-shrink: 1;
+  margin: 0 0 1em 0;
+}
+
+@media screen and (min-width: 53.75em) {
+  .search-tools .filter {
+    margin: 0 0.2em 1em 0.2em;
+    margin-bottom: 0;
+  }
+}
+
+.search-tools .filter > div {
+  background-color: white;
+  border: 1px solid gainsboro;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: 1em;
+  margin-bottom: 0.75em;
+  padding: 0.5em 6em 0.5em 0.5em;
+  position: relative;
+  transition: border-color;
+  width: 100%;
+}
+
+.search-tools .filter > div:focus, .search-tools .filter > div:hover {
+  border-color: #c3c3c3;
+}
+
+.search-tools .filter > div label {
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.search-tools .filter .filter-list {
+  margin: 0.5em 0 0;
+  padding: 0;
+}
+
+.search-tools .filter .filter-list label {
+  display: inline;
+}
+
+.search-tools .filter button.clear {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  bottom: auto;
+  left: auto;
+  font-size: 0.7em;
+  max-width: 6em;
+}
+
+.search-tools .filter .hide-options {
+  margin-bottom: 0;
+}
+
+.search-tools .filter .hide-options ol, .search-tools .filter .hide-options button {
+  display: none;
+}
+
+.search-tools .trigger {
+  margin-top: 1.9em;
+  position: relative;
+  width: auto;
+  min-width: 150px;
+}
+
+@media (max-width: 860px) {
+  .search-tools .trigger {
+    margin: 0;
+  }
+}
+
+.search-tools .trigger button {
+  display: block;
+  padding: 0.5em 1em;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  top: 0;
+  right: 0;
+}
+
+#filter-btn {
+  margin: 0;
+  font-size: 15px;
+  align-self: stretch;
+  line-height: 1.7;
+}

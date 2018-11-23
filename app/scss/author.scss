@@ -1,0 +1,17 @@
+.show-more {
+	display: inline-block;
+	&:after {
+		content: 'More...';
+	}
+}
+.expandable {
+	display: none;
+	&.show {
+		display: inline-block;
+		& + .show-more {
+			&:after {
+				content: 'Less...';
+			}
+		}
+	}
+}

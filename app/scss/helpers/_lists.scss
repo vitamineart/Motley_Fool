@@ -1,0 +1,24 @@
+.content-container{
+	ul, ol {
+		margin-bottom: 0.75em;
+		padding-left: 1.25em;
+	}
+	ul {
+		li {
+			list-style-type: disc;
+			padding-bottom: 0.5em;
+		}
+		&.unmarked {
+			li {
+				list-style: none;
+				margin-left: none;
+			}
+		}
+	}
+	ol {
+		li {
+			list-style-type: decimal;
+			padding-bottom: 0.5em;
+		}
+	}
+}

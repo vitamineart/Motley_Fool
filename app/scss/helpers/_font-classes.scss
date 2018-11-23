@@ -1,0 +1,85 @@
+
+$system-font: -apple-system, BlinkMacSystemFont,
+	"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+	"Fira Sans", "Droid Sans", "Helvetica Neue",
+	sans-serif;
+
+%font-sans-serif {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+%font-serif {
+  font-family: Georgia, Cambria,"Times New Roman",Times,serif;
+}
+%font-awesome {
+  font-family: FontAwesome;
+}
+
+%font-roboto-normal {
+    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+}
+
+%font-roboto-light {
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+}
+
+%font-roboto-slab-light {
+  font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+}
+
+%font-roboto-slab {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
+}
+
+%font-roboto-slab-bold {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 500;
+}
+
+%font-roboto-medium {
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+}
+
+%font-roboto-bold {
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+%font-roboto-ultra {
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 900;
+}
+
+%font-roboto-condensed-light {
+  font-family: 'Roboto Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
+
+%font-roboto-condensed-normal {
+  font-family: 'Roboto Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+
+%font-roboto-condensed-bold {
+  font-family: 'Roboto Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+%slab-font {
+    font-family: 'Museo Slab';
+    font-weight: 500;
+}
+
+%condensed-font {
+    font-family: 'Roboto Condensed', serif;
+    font-weight: 400;
+}
+
+%condensed-font-light {
+    font-family: 'Roboto Condensed', serif;
+    font-weight: 300;
+}

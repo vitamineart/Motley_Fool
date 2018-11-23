@@ -1,0 +1,29 @@
+//////////////////////////////////////////////
+// CIRCLES
+//////////////////////////////////////////////
+
+@mixin circle($size, $background-color, $icon-value, $icon-color) {
+    border-radius: 50%;
+    width: $size;
+    height: $size;
+    background-color: $background-color;
+    display: inline-block;
+    .reverse-icon {
+        @include add-icon($icon-value) {
+            display: block;
+            text-align: center;
+            margin: 0 auto !important;
+            line-height: $size;
+            font-size: $size * 0.55;
+        }
+        @include color-icon($icon-color);
+    }
+}
+
+@mixin circle-image($size, $border-width, $border-color) {
+    border-radius: 50%;
+    width: $size;
+    height: $size;
+    border: $border-width solid $border-color;
+    overflow:hidden;
+}

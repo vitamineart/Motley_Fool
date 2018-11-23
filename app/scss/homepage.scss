@@ -1,0 +1,602 @@
+@import "colors";
+
+$system-font: -apple-system, BlinkMacSystemFont,
+  "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+  "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+
+body {
+	font-family: $system-font;
+}
+
+.hp-news-panel {
+	font-family: $system-font;
+	margin-bottom: 20px;
+	@supports (display: grid) {
+		display: grid;
+		grid-gap: 2px;
+		@media (min-width:480px) {
+			grid-template-columns: repeat(12, 1fr);
+		}
+	}
+	.market-performance-card {
+		max-height: 350px;
+		margin-bottom: 10px;
+		display: block;
+		@media (min-width:1024px) {
+			display: inline-block;
+			width: 22%;
+		}
+		@supports (display: grid) {
+			width: auto;
+			grid-column-start: span 12;
+			@media (min-width:480px) {
+				margin-bottom: 0;
+			}
+			@media (min-width:660px) {
+				grid-column-start: span 6;
+			}
+			@media (min-width:860px) {
+				grid-column-start: span 6;
+			}
+			@media (min-width:1024px) {
+				grid-column-start: span 3;
+			}
+		}
+	}
+}
+.hp-news-panel-article {
+	transition: 0.3s ease;
+	position: relative;
+	min-height: 250px;
+	overflow: hidden;
+	// box-shadow: 0 0px 2px #aaa;
+	width: 100%;
+	display: block;
+	margin: 0 0 10px 0;
+	@media (min-width:1024px) {
+		display: inline-block;
+		vertical-align: top;
+		min-height: 300px;
+		width: 23%;
+		margin: 0 5px;
+	}
+	@supports(display:grid) {
+		margin: 0;
+		width: auto;
+		display: flex;
+		flex-direction: column;
+		grid-column-start: span 12;
+		@media (min-width:480px) {
+			grid-column-start: span 6;
+			margin-bottom: 0;
+		}
+		@media (min-width:860px) {
+			grid-column-start: span 3;
+		}
+	}
+	&.featured {
+		margin: 0 20px;
+		width: 100%;
+		@media (min-width:1024px) {
+			width: 45%;
+			margin: 10px;
+		}
+		@supports (display:grid) {
+			order: -1;
+			grid-column-start: span 12;
+			width: auto;
+			margin: 0;
+			@media (min-width:480px) {
+
+			}
+			@media (min-width:860px) {
+				max-height: 350px;
+			}
+			@media (min-width:1024px) {
+				order: 0;
+				grid-column-start: span 5;
+			}
+			@media (min-width:1200px) {
+				grid-column-start: span 6;
+			}
+		}
+	}
+	&.trending {
+		align-items: flex-start;
+		box-shadow: none;
+		padding: 0 15px 7.5px 15px;
+		width: 100%;
+		@media (min-width:1024px) {
+			width: 25%;
+		}
+		@supports (display: grid) {
+			grid-column-start: span 12;
+			width: auto;
+			@media (min-width:660px) {
+				grid-column-start: span 6;
+			}
+			@media (min-width:860px) {
+				padding: 0;
+			}
+			@media (min-width:1024px) {
+				grid-column-start: span 4;
+			}
+			@media (min-width:1200px) {
+				grid-column-start: span 3;
+			}
+		}
+		.label {
+			display: inline-block;
+			vertical-align: top;
+			background: darken($red, 13%);
+			background: $red;
+			color: #fff;
+			text-transform: uppercase;
+			font-weight: 600;
+			font-size: 13px;
+			padding: 3px 10px;
+			margin-bottom: 7.5px;
+		}
+	}
+	> a {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+	}
+	.image {
+		position: relative;
+		position: absolute;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		img {
+			transition: .6s ease;
+			display: block;
+			max-width: 100%;
+			width: 100%;
+			@supports (object-fit: cover) {
+				object-fit: cover;
+				height: 100%;
+			}
+		}
+	}
+	border: 2px solid transparent;
+	&:hover {
+		&:not(.trending){
+			border-color: $yellow;
+		}
+		.image {
+			img {
+				transform: scale(1.03) rotate(0.1deg);
+				filter: brightness(110%) saturate(120%)
+			}
+		}
+		.hp-news-panel-article-caption {
+			background-color: hsla(50, 0%, 0%, 0.8);
+		}
+	}
+
+}
+
+.hp-news-panel-article-caption {
+	transition: .3s ease;
+	padding: 15px;
+	z-index: 2;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: hsla(50, 0%, 0%, 0.6);
+	text-shadow: 0 0 5px hsla(0, 0, 0, .9);
+	.author-byline {
+		color: #fff;
+		margin: 0;
+		font-size: 13px;
+		font-family: $system-font;
+		display: none;
+	}
+	h2.hp-news-panel-article-header {
+		border: none;
+		font-size: 23px;
+		text-transform: none;
+		// font-weight: 400;
+		margin-bottom: 7.5px;
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+		margin: 0;
+		line-height: 1.2;
+		@supports (display: flex) {
+			flex: 1;
+		}
+	}
+	.featured & {
+		h2.hp-news-panel-article-header {
+			font-size: 25px;
+			font-weight: 500;
+			@media (min-width:860px) {
+				max-width: 700px;
+				font-size: 35px;
+				font-weight: 700;
+			}
+		}
+	}
+	@media (min-width:480px) {
+		min-height: 30%;
+	}
+}
+h2.panel-section-header {
+	display: block;
+	width: 100%;
+	font-family: $system-font;
+	text-align: center;
+	color: #777;
+	padding: 0 15px;
+	border: none;
+	margin: 15px 0;
+	padding: 0;
+	font-size: 26px;
+	font-weight: 100;
+	border-bottom: none;
+}
+#investing-news-section {
+	background-color: #f7f7f7;
+	padding:0;
+	@media (min-width:860px) {
+		padding: 1rem;
+	}
+}
+ul.hp-trending-articles-list {
+	li {
+		border-top: 1px solid #ddd;
+		a {
+			display: block;
+			line-height: 1.1;
+			padding: 10px 0 10px;
+			color: $blue;
+			&:hover {
+				color: lighten($blue, 20%);
+			}
+		}
+		&:first-child {
+			border-top: none;
+		}
+	}
+}
+.all-fool-articles {
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+/* ==================================How Help Section ============================ */
+#how-help-section {
+	font-family: $system-font;
+	padding: 15px 7.5px;
+	background-color: #fff;
+	@media (min-width:660px) {
+		padding: 15px;
+	}
+	@media (min-width:1024px) {
+		padding: 30px;
+	}
+
+	h2 {
+		font-family: $system-font;
+		font-size: 28px;
+		font-weight: 500;
+		text-transform: none;
+		margin: 15px 0;
+		text-align: center;
+		@media (min-width:480px) {
+			font-size: 30px;
+		}
+		@media (min-width:660px) {
+			font-size: 35px;
+		}
+		@media (min-width:1024px) {
+			font-size: 40px;
+		}
+	}
+	.how-help-grid {
+		display: grid;
+		grid-gap: 7.5px;
+		grid-template-columns: repeat(12, 1fr);
+		@media (min-width:1024px) {
+			grid-gap: 15px;
+		}
+		.grid-item {
+			font-family: $system-font;
+			grid-column-start: span 12;
+			padding: 7.5px;
+			background: linear-gradient(#fafafa, transparent);
+			border: 1px solid #eee;
+			border-bottom-width: 3px;
+			display: inline-flex;
+			flex-direction: column;
+			align-items: center;
+			border-radius: 7px;
+			text-align: center;
+			color: $blue;
+			@media (min-width:480px) {
+				padding: 15px;
+			}
+			@media (min-width:660px) {
+				grid-column-start: span 6;
+			}
+			@media (min-width:1024px) {
+				grid-column-start: span 4;
+				padding: 15px 30px;
+			}
+			.grid-item-icon {
+				font-size: 30px;
+				margin: 3px 0;
+				float: none;
+				border-radius: 50%;
+				background-color: $blue;
+				border: 2px solid transparent;
+				width: 60px;
+				height: 60px;
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				transition: .2s ease-out;
+				.fa {
+					color: #fff;
+					transition: .3s ease;
+				}
+				@media (min-width:660px) {
+					font-size: 35px;
+					width: 70px;
+					height: 70px;
+					margin: 7.5px 0;
+				}
+				@media (min-width:860px) {
+					font-size: 40px;
+					width: 90px;
+					height: 90px;
+				}
+				@media (min-width:1024px) {
+					width: 100px;
+					height: 100px;
+					font-size: 50px;
+					margin: 15px 0;
+				}
+			}
+			h3 {
+				font-family: $system-font;
+				font-size: 22px;
+				font-weight: 300;
+				@media (min-width:480px) {
+					font-size: 25px;
+				}
+				@media (min-width:660px) {
+					font-size: 28px;
+				}
+				@media (min-width:860px) {
+					font-size: 30px;
+				}
+			}
+			h3 + p {
+				font-family: $system-font;
+				font-size: 14px;
+				font-weight: 100;
+				letter-spacing: 0;
+				margin-bottom: 0;
+				@media (min-width:660px) {
+					font-size: 16px;
+				}
+			}
+			&:hover, &:active, &:focus {
+				background: $yellow;
+				color: #fff;
+				border-bottom-width: 1px;
+				border-color: darken($yellow, 15%);
+				.grid-item-icon {
+					background-color: $yellow;
+					border-color: #fff;
+					.fa {
+						color: #fff;
+					}
+				}
+				.grid-item-text {
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+/* ==================================How Help Section end ============================ */
+
+/* ==================================About The Motley Fool ============================ */
+.across-the-web-section .about {
+	h2 {
+		text-transform: none;
+		font-size: 28px;
+		padding-bottom: 15px;
+		border: none;
+	}
+	h3 {
+		margin: 25px 0 15px;
+		padding-bottom: 15px;
+		border-bottom: 1px solid #ddd;
+		font-size: 110%;
+	}
+	h4 {
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 75%;
+		margin-bottom: 15px;
+		opacity: 1;
+		color: $gray;
+	}
+	.social-links {
+		margin: 15px 0;
+		display: flex;
+		flex-wrap: wrap;
+		li {
+			margin: 7.5px;
+		}
+	}
+	.premium-services {
+		h4 {
+			color: $gray;
+		}
+		.all-services {
+			font-weight: 400;
+			display: inline-block;
+			align-items: center;
+			margin: 0;
+			font-size: 16px;
+			border: 1px solid $blue;
+			padding: 15px 25px;
+			border-radius: 7px;
+			color: $blue;
+			.fa {
+			  font-size: 13px;
+			  margin-left: 5px;
+			}
+			@media (min-width: 480px) {
+			  margin: 15px;
+			}
+			&:hover, &:active, &:focus {
+			  background-color: $blue;
+			  color: #fff;
+			}
+		}
+	}
+	.podcasts {
+		.podcast-links {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			li {
+				flex-basis: 50%;
+				padding: 15px;
+				margin: 0;
+				text-align: center;
+				@media (min-width:660px) {
+					flex-basis: 33%;
+				}
+				@media (min-width:860px) {
+					flex-basis: 25%;
+				}
+				@media (min-width:1024px) {
+					flex-basis: 20%;
+				}
+				a {
+					display: inline-flex;
+					align-items: center;
+					text-align: center;
+					@media (min-width:480px) {
+						flex-direction: column;
+
+					}
+					img {
+						margin-right: 5px;
+					}
+				}
+			}
+		}
+	}
+}
+.global-companies {
+	h3 {
+		margin-bottom: 15px;
+	}
+}
+.global-companies-grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+	float: none;
+	.grid-item {
+		display: inline-flex;
+		flex-direction: column;
+		flex-basis: 25%;
+		align-items: center;
+		padding: 15px;
+		@media (min-width:1024px) {
+			flex-basis: 20%;
+		}
+		img {
+			max-height: 35px;
+			margin-bottom: 15px;
+			border: 1px solid #ddd;
+		}
+		span {
+			text-align: center;
+			@media (max-width:479px) {
+				display: none;
+			}
+		}
+	}
+}
+.home-page .around-the-web-sidebar {
+	.sister-companies {
+		padding: 15px;
+		margin-bottom: 0;
+		h3 {
+			margin-top: 0;
+			border: none;
+			padding-top: 0;
+		}
+		@media (min-width:480px) {
+			padding: 30px;
+		}
+		li{
+			margin-top: 0;
+			&:last-child {
+				padding-top: 10px;
+				border: 0;
+			}
+		}
+		img {
+			max-height: 45px;
+		}
+	}
+	.more-from-the-motley-fool {
+		background-color: #fff;
+	    box-shadow: 0 0 2px -1px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.24);
+	    padding: 25px 40px;
+	    margin: 20px 0px;
+	    border: solid 1px #eee;
+		padding: 15px 15px 0;
+		@media (min-width:480px) {
+			padding: 15px 30px 0;
+		}
+		h4 {
+			margin-top: 15px;
+			margin-bottom: 7.5px;
+			text-transform: none;
+			font-size: 16px;
+			font-weight: 500;
+			display: flex;
+			align-items: center;
+			&:first-child {
+				// margin-top: 0;
+			}
+			.fa {
+				font-size: 20px;
+				order: -1;
+				margin-right: 10px;
+			}
+		}
+		ul {
+			margin-bottom: 30px;
+			li {
+				margin-bottom: 5px;
+				font-size: 16px;
+			}
+		}
+	}
+}
+/* ================================== About The Motley Fool end ============================ */

@@ -1,0 +1,118 @@
+.market-performance-card {
+  border: 1px solid #d5d5d5;
+  background: #fff;
+  padding: 30px;
+}
+
+@media (max-width: 659px) {
+  .market-performance-card {
+    padding: 15px;
+  }
+}
+
+.mega-menu-wrapper .market-performance-card {
+  padding: 20px;
+  max-width: 250px;
+}
+
+.mega-menu-wrapper .market-performance-card .market-table {
+  font-size: 14px;
+}
+
+.mega-menu-wrapper .market-performance-card .market-table .item {
+  padding: 7px 0;
+}
+
+.mega-menu-wrapper .market-performance-card .market-table .item .market-time-period {
+  font-size: 16px;
+}
+
+.mega-menu-wrapper .market-performance-card .market-table .item .market-value {
+  width: 50px;
+  font-size: 14px;
+}
+
+.mega-menu-wrapper .market-performance-card .market-table .item .market-value [class*=fa-] {
+  font-size: 30px;
+  margin-top: -5px;
+}
+
+@media (max-width: 1023px) {
+  .mega-menu-wrapper .market-performance-card {
+    display: none;
+  }
+}
+
+.market-performance-card .sponsored-by {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* market table */
+.market-table {
+  margin-bottom: 15px;
+}
+
+.market-table .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.market-table .item .market-time-period {
+  font-size: 13px;
+  color: #555;
+  flex: 1 1 33%;
+  max-width: 50px;
+}
+
+.market-table .item .market-value {
+  position: relative;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1;
+  flex: 1 1 33%;
+  max-width: 33%;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.market-table .item .market-value span {
+  vertical-align: middle;
+}
+
+.market-table .item .market-value [class*=fa-] {
+  opacity: 0.5;
+  font-size: 30px;
+  transform: scaleX(0.7);
+}
+
+.market-table .item .market-value.up {
+  color: #267326;
+}
+
+.market-table .item .market-value.down {
+  color: #CC3300;
+}
+
+.market-table .item .market-value.col-name {
+  font-size: 15px;
+}
+
+.market-table .item .market-value .disclaimer {
+  font-weight: normal;
+  font-size: 13px;
+}
+
+.market-table .item:last-child {
+  border: none;
+}
+
+.market-table .item.disclaimer {
+  padding: 0;
+}

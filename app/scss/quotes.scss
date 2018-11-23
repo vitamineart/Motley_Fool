@@ -1,0 +1,297 @@
+@import "article-agg.scss";
+@import "color-label";
+@import "bourbon";
+@import "neat";
+@import "helpers/breakpoints";
+
+$system-font: -apple-system, BlinkMacSystemFont,
+	"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+	"Fira Sans", "Droid Sans", "Helvetica Neue",
+	sans-serif;
+
+body {
+	font-family: $system-font;
+}
+
+.page-grid-layout {
+	@include media($large-screen-and-up) {
+		display: grid;
+		grid-template-columns: auto 30%;
+		grid-gap: 15px;
+	}
+	.leaderboard {
+		display: grid;
+		place-items: center;
+		padding-top: 15px;
+	}
+	.top-right-ad {
+		padding-top: 15px;
+		display: none;
+		@media (min-width:1024px) {
+			display: grid;
+			place-items: center;
+		}
+	}
+	.column {
+		&.main-column {
+			margin-bottom: 60px;
+			@media (min-width:1024px) {
+				margin-bottom: 30px;
+			}
+		}
+		&.sidebar {
+
+		}
+	}
+}
+.content-block {
+	.content-block-label {
+		font-size: 16px;
+		margin-bottom: 15px;
+		& + .subhead {
+			font-size: 12px;
+			font-weight: 100;
+			margin-top: -15px;
+			margin-bottom: 30px;
+			@media (max-width:659px) {
+				margin-left: 15px;
+				margin-top: -20px;
+			}
+		}
+	}
+}
+#tickerpage_pitch {
+	margin-bottom: 0;
+}
+article {
+	h4 {
+		font-size: 28px;
+		font-weight: 400;
+		line-height: 1.1;
+	}
+}
+.company-title-section {
+	border: none;
+	margin: 0;
+	@media (min-width:480px) {
+		display: flex;
+		align-items: center;
+	}
+	.company-name-container {
+		float: none;
+		margin: 0 15px 0 0;
+		width: auto;
+		display: flex;
+		align-items: center;
+	}
+	.sub-page-dropdown-container {
+		float: none;
+		margin: 20px;
+		width: auto;
+		margin-left: auto;
+	}
+	h1 {
+		display: flex;
+		align-items: baseline;
+		margin: 15px 0;
+		.company-name {
+			font-size: 60px;
+			line-height: 1;
+			font-weight: 300;
+			color: #000;
+			margin: 0 0 0 15px;
+		}
+		.company-ticker {
+			font-size: 15px;
+			color: #999;
+			font-weight: 900;
+			margin-left: 5px;
+		}
+	}
+}
+
+// filter
+#article-filter {
+	margin: 15px 0;
+	.filter {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 7.5px;
+		border: 1px solid #EBF1F5;
+		color: #999;
+		text-align: center;
+		cursor: pointer;
+		font-size: 16px;
+		line-height: 1.1;
+		font-weight: 100;
+		transition: .3s ease;
+		position: relative;
+		box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.0);
+		flex: auto;
+		> span {
+		}
+		@media (min-width:1024px) {
+			padding: 7.5px 15px;
+		}
+		&:hover, &:active, &:focus {
+			border-color: $blue;
+			color: $blue;
+		}
+		&.active {
+			background-color: $yellow;
+			border-color: $yellow;
+			color: $blue;
+			font-size: 18px;
+			z-index: 1;
+			box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.3)
+		}
+	}
+	display: flex;
+}
+.button-group {
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 3px !default;
+  $base-line-height: 1.5em !default;
+  $base-spacing: 1.5em !default;
+  $base-font-size: 1em !default;
+  $base-background-color: white !default;
+  $action-color: #477DCA !default;
+  $dark-gray: #333 !default;
+  $large-screen: 53.75em !default;
+  $base-font-color: $dark-gray !default;
+  $button-group-background: $base-background-color;
+  $button-group-color: lighten($base-font-color, 30%);
+  $button-group-border: 1px solid silver;
+  $button-group-inner-border: 1px solid lighten(silver, 18%);
+  $button-group-background-checked: $action-color;
+  $button-group-color-checked: white;
+  $button-group-border-checked: darken($button-group-background-checked, 15%);
+
+  input {
+    display: none;
+  }
+
+  label {
+    margin-bottom: 0;
+
+    @include media($large-screen) {
+      float: left;
+    }
+
+    .button-group-item {
+      background: $button-group-background;
+      border-left: $button-group-border;
+      border-radius: 0;
+      border-right: $button-group-border;
+      color: $button-group-color;
+      cursor: pointer;
+      display: inline-block;
+      font-size: $base-font-size;
+      font-weight: normal;
+      line-height: 1;
+      padding: 0.75em 1em;
+      width: 100%;
+
+      @include media($large-screen) {
+        border-bottom: $button-group-border;
+        border-left: 0;
+        border-right: $button-group-inner-border;
+        border-top: $button-group-border;
+        width: auto;
+      }
+
+      &:focus,
+      &:hover {
+        background-color: darken($button-group-background, 3%);
+      }
+    }
+
+    &:first-child .button-group-item {
+      @include border-top-radius($base-border-radius);
+      border-top: $button-group-border;
+
+      @include media($large-screen) {
+        border-bottom-left-radius: $base-border-radius;
+        border-left: $button-group-border;
+        border-top-left-radius: $base-border-radius;
+        border-top-right-radius: 0;
+      }
+    }
+
+    &:last-child .button-group-item {
+      @include border-bottom-radius($base-border-radius);
+      border-bottom: $button-group-border;
+
+      @include media($large-screen) {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: $base-border-radius;
+        border-right: $button-group-border;
+        border-top-right-radius: $base-border-radius;
+      }
+    }
+
+    input:checked + .button-group-item {
+      background: $button-group-background-checked;
+      border: 1px solid $button-group-border-checked;
+      box-shadow: inset 0 1px 2px darken($button-group-background-checked, 10%);
+      color: $button-group-color-checked;
+    }
+  }
+  &:after {
+  	content: '.';
+  	color: transparent;
+  	text-indent: 9999px;
+  	height: 0;
+  	width: 0;
+  	clear: both;
+  }
+}
+
+
+.company-description {
+	color: #000;
+	font-weight: 100;
+	margin-top: 15px;
+}
+#page-selector {
+	font-family: inherit;
+}
+.quote-price-info {
+	margin-left: auto;
+}
+.price-quote-container {
+	h2 {
+		font-weight: 300;
+		font-size: 30px;
+	}
+	.current-price {
+	}
+	.price-change-amount {
+
+	}
+}
+#big-box-ad-1 {
+	margin-bottom: 15px;
+	display: flex;
+	justify-content: center;
+	iframe {
+		width:100%;
+	}
+}
+
+.section-more-link {
+	font-size: 16px;
+}
+.expander-trigger {
+	&:before {
+		content: 'Show Less...';
+	}
+	&.expander-hidden {
+		&:before {
+			content: 'Show More...';
+		}
+	}
+	border-bottom: none;
+	margin-bottom: 0;
+}

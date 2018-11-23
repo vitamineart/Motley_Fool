@@ -1,0 +1,95 @@
+<!-- Investing News Section -->
+{% load tz %}
+{% load pilbox %}
+{% load article_page %}
+
+<section class="row panel-section investing-news-section" id="investing-news-section">
+    <div class="investing-news-container">
+        <div class="investing-news-copy">
+            <div class="row">
+                <div class="full-col">
+                    <h2>Motley Fool News &amp; Commentary</h2>
+                </div>
+                <div class="main-col">
+                    {% for article in featured_article %}
+                        <section class="jumbo-card card">
+                            <!-- Placeholders aggregate -->
+                            {% for image in article.images %}
+                                {% if image.featured %}
+                                    <div class="card-image">
+                                        <a href="{{article.path }}" id="featured-img">
+                                            <img src="{% resize_image image.url width=600 height=450 %}" alt="{{image.name}}">
+                                        </a>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                            <div class="card-elements">
+                                <div class="card-header">
+                                    <a href="{{ article.path }}" id="featured-hl">
+                                    <h3>{{article.headline}}</h3>
+                                    </a>
+                                    <p class="author-byline">
+                                        {{ article.byline }} | {% localtime on %}{{ article.publish_at|to_datetime|date:"M j, Y" }}{% endlocaltime %}
+                                    </p>
+                                    {% if article.sponsored_content %}
+                                        <p class="sponsored">Paid Post: Vanguard</p>
+                                    {% endif %}
+                                </div>
+                                <div class="card-copy">
+                                    <p>{{article.promo}}</p>
+                                </div>
+                            </div>
+                        </section>
+
+                    {% endfor %}
+                </div>
+
+                <!-- main-col -->
+                <div class="side-col">
+                    <!-- Market Graph -->
+                    {% include 'www/partials/common/market_performance.html' %}
+                </div>
+                <div class="row" style="display:flex;" >
+                    <section class="promoted-articles">
+                        <div class="cards row">
+                            {% for article in promoted_articles %}
+                                <div class="card">
+                                {% for image in article.images %}
+                                    {% if image.featured %}
+                                        <div class="card-image">
+                                            <a href="{{article.path}}" id="promoted-img">
+                                                <img src="{% resize_image image.url width=350 height=250 %}" alt="{{image.name}}">
+                                            </a>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                                <div class="card-elements">
+                                    <div class="card-header">
+                                        <a href="{{ article.path }}" id="promoted-hl">
+                                            <h4>{{article.headline}}</h4>
+                                        </a>
+                                        <p class="author-byline">
+                                            {{ article.byline }} | {% localtime on %}{{ article.publish_at|to_datetime|date:"M j, Y"}}{% endlocaltime %}
+                                        </p>
+                                    </div>
+                                    <div class="card-copy">
+                                        <p>{{article.promo}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </section>
+
+                </div>
+                <div class="full-row all-fool-articles">
+                    <a href="/investing-news/" id="investing-news-more" class="cta-button">
+                        <button type="button">
+                          Go to All Fool Articles
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

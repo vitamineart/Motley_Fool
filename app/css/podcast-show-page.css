@@ -1,0 +1,11 @@
+#PodcactTranscripts {
+  color: #000;
+}
+
+#PodcactTranscripts:hover, #PodcactTranscripts:active, #PodcactTranscripts:focus {
+  color: #336699;
+}
+
+#PodcactTranscripts .fa {
+  margin-right: 7px;
+}

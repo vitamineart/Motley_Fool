@@ -1,0 +1,57 @@
+@import "neat";
+
+// Neat Overrides
+// $column: 90px;
+// $gutter: 30px;
+// $grid-columns: 12;
+ $max-width: em(1280);
+
+// Neat Defaults to get back to
+// $max-width: em(1088);
+// $medium-screen: em(640);
+// $large-screen: em(860);
+
+// $break-x-small: 400px !default;
+// $break-small: 660px !default;
+// $break-medium: 1024px !default;
+// $break-large: 1280px !default;
+
+// Neat Breakpoints
+// $medium-screen: em(640);
+// $large-screen: em(860);
+
+
+$x-small-screen: 400px;
+$small-screen: 480px;
+$medium-screen: 660px;
+$mid-screen: 860px;
+$large-screen: 1024px;
+$x-large-screen: 1280px;
+
+$search-toggle: 1226px;
+
+
+//And Up
+$x-small-screen-and-up: new-breakpoint((min-width $x-small-screen));
+$small-screen-and-up: new-breakpoint((min-width $small-screen));
+$medium-screen-and-up: new-breakpoint((min-width $medium-screen));
+$mid-screen-and-up: new-breakpoint((min-width $mid-screen));
+$large-screen-and-up: new-breakpoint((min-width $large-screen));
+$x-large-screen-and-up: new-breakpoint((min-width $x-large-screen));
+$search-toggle-and-up: new-breakpoint((min-width $search-toggle));
+
+//And Down
+$x-small-screen-and-down: new-breakpoint((max-width $small-screen - 1));
+$small-screen-and-down: new-breakpoint((max-width $medium-screen - 1));
+$medium-screen-and-down: new-breakpoint((max-width $mid-screen - 1));
+$mid-screen-and-down: new-breakpoint((max-width $large-screen - 1));
+$large-screen-and-down: new-breakpoint((max-width $x-large-screen - 1));
+$search-toggle-and-down: new-breakpoint((max-width $search-toggle - 1));
+
+//Only
+$x-small-screen-only: new-breakpoint((max-width $x-small-screen - 1));
+$small-screen-only: new-breakpoint(((min-width $small-screen) and (max-width $medium-screen - 1)));
+$medium-screen-only: new-breakpoint(((min-width $medium-screen) and (max-width $mid-screen - 1)));
+$mid-screen-only: new-breakpoint(((min-width $mid-screen) and (max-width $large-screen - 1)));
+$large-screen-only: new-breakpoint(((min-width $large-screen) and (max-width $x-large-screen - 1)));
+$x-large-screen-only: new-breakpoint(((min-width $x-large-screen)));

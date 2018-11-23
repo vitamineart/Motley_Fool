@@ -1,0 +1,73 @@
+<!-- Investing News Section -->
+{% load tz %}
+{% load pilbox %}
+{% load article_page %}
+
+<section class="row panel-section investing-news-section" id="investing-news-section">
+     <!-- <h2 class="panel-section-header">News &amp; Analysis</h2> -->
+        <section class="hp-news-panel">
+
+            <!-- Trending Articles List -->
+            <article class="hp-news-panel-article trending">
+                <div class="label">trending</div>
+                <ul class="hp-trending-articles-list">
+                    <li><a href="#">Atlassian Stock Tumbles on Downgrade, Guidance Miss: What You Need to Know (74 characters)</a></li>
+                    <li><a href="#">Honeywell International Inc. (HON) Q1 2018 Earnings Conference Call Transcript</a></li>
+                    <li><a href="#">Where Will Kratos Defense & Security Solutions, Inc. Be in 5 Years?</a></li>
+                    <li><a href="#">Snapchat Publishers See Dramatic Drop in Traffic Following Redesign</a></li>
+                    <li><a href="#">Break Even and Lock In: Apple's Subscription Services Strategy</a></li>
+                </ul>
+            </article>
+
+            <!-- Featured Article -->
+            {% for article in featured_article %}
+                <article class="hp-news-panel-article featured">
+                    <a href="{{article.path }}" id="featured-img">
+                        {% for image in article.images %}
+                            {% if image.featured %}
+                                <div class="card-image">
+                                    <img src="{% resize_image image.url width=600 height=450 %}" alt="{{image.name}}">
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        <div class="hp-news-panel-article-caption">
+                            <h2 class="hp-news-panel-article-header">{{article.headline}}</h2>
+                            <div class="author-byline">{{ article.byline }} | {% localtime on %}{{ article.publish_at|to_datetime|date:"M j, Y" }}{% endlocaltime %}</div>
+                        </div>
+                    </a>
+                </article>
+            {% endfor %}
+
+            <!-- Market Graph -->
+            {% include 'www/partials/common/market_performance.html' %}
+
+            <!-- Promoted Articles -->
+            {% for article in promoted_articles %}
+                <article class="hp-news-panel-article">
+                    {% for image in article.images %}
+                        <a href="{{article.path}}" id="promoted-img">
+                            {% if image.featured %}
+                                <div class="card-image">
+                                    <img src="{% resize_image image.url width=350 height=250 %}" alt="{{image.name}}">
+                                </div>
+                            {% endif %}
+                            <div class="hp-news-panel-article-caption">
+                                <h2 class="hp-news-panel-article-header">{{article.headline}}</h2>
+                                <p class="author-byline">
+                                    {{ article.byline }} | {% localtime on %}{{ article.publish_at|to_datetime|date:"M j, Y"}}{% endlocaltime %}
+                                </p>
+                            </div>
+                        </a>
+                    {% endfor %}
+                </article>
+            {% endfor %}
+        </section>
+
+        <div class="full-row all-fool-articles">
+            <a href="/investing-news/" id="investing-news-more" class="cta-button">
+                <button type="button">
+                    Go to All Fool Articles
+                </button>
+            </a>
+        </div>
+</section>

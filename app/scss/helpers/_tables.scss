@@ -1,0 +1,21 @@
+.content-container {
+    table {
+        th, td {
+            border: 1px solid #ddd;
+            @include media($medium-screen-and-up) {
+                padding: 5px;
+                font-size: 90%;
+            }
+            @include media($large-screen-and-up) {
+                padding: 10px;
+                font-size: 100%;
+            }
+        }
+        th {
+            vertical-align: middle;
+            background-color: #222;
+            color: #fff;
+            border-color: #333;
+        }
+    }
+}

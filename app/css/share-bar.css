@@ -1,0 +1,131 @@
+/* share box start */
+#share-box {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  transition: .3s ease;
+}
+
+@media (max-width: 1023px) {
+  #share-box {
+    visibility: hidden;
+    transform: translateY(200%);
+  }
+  #share-box.visible {
+    visibility: visible;
+    transform: none;
+  }
+}
+
+@media only screen and (max-device-width: 737px) and (orientation: landscape) {
+  #share-box {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  #share-box {
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    flex-direction: column;
+    right: auto;
+    border: none;
+  }
+}
+
+#share-box:hover .item {
+  filter: saturate(30%);
+}
+
+#share-box .item {
+  transition: .3s ease;
+  padding: 0 7.5px;
+  flex: 1;
+  text-align: center;
+  line-height: 50px;
+  height: 50px;
+  color: #fff;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  #share-box .item {
+    display: block;
+    height: 50px;
+    flex: 0 0 50px;
+    max-width: 50px;
+    padding: 0 15px;
+  }
+}
+
+#share-box .item:hover, #share-box .item:active, #share-box .item:focus {
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.2) inset;
+  filter: saturate(150%) brightness(110%);
+}
+
+@media (min-width: 1024px) {
+  #share-box .item:hover, #share-box .item:active, #share-box .item:focus {
+    line-height: 70px;
+    height: 70px;
+  }
+}
+
+#share-box .item#share-facebook {
+  background-color: #3B5998;
+}
+
+#share-box .item#share-twitter {
+  background-color: #55ACEE;
+}
+
+#share-box .item#share-google {
+  background-color: #DD4B39;
+}
+
+#share-box .item#share-tumblr {
+  background-color: #35465C;
+}
+
+#share-box .item#share-email {
+  background-color: #777777;
+}
+
+#share-box .item#share-linkedin {
+  background-color: #0077B5;
+}
+
+#share-box .item#next-article {
+  background-color: #f0f0f0;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  flex: 1 1 auto;
+}
+
+@media (min-width: 1024px) {
+  #share-box .item#next-article {
+    display: none;
+  }
+}
+
+#share-box .item#next-article .fa {
+  transition: .5s ease;
+  font-size: 13px;
+  margin-left: 5px;
+}
+
+#share-box .item#next-article:hover .fa, #share-box .item#next-article:active .fa, #share-box .item#next-article:focus .fa {
+  transform: translateX(150%);
+}
+
+/* share box end */

@@ -1,0 +1,153 @@
+.compareTable .research {
+  position: relative;
+  text-align: center;
+}
+
+.compareTable .research dl dt {
+  cursor: pointer;
+}
+
+.compareTable .research dl dt:after {
+  content: ' +';
+  color: #07a;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.compareTable .research dl dt.active:after {
+  content: ' -';
+}
+
+.compareTable .research dl dt.active + dd {
+  max-height: 300px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.compareTable .research dl dd {
+  max-height: 0;
+  overflow: hidden;
+  transition: .3s ease;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.compareTable .btn.more-details {
+  font-size: 12px;
+  text-transform: none;
+  padding: 10px 20px;
+}
+
+.compareTable .btn.more-details .fa {
+  font-size: 10px;
+}
+
+.compareTable .expando td {
+  padding: 15px;
+}
+
+.expando1-info {
+  display: none;
+  position: absolute;
+  background-color: #fafafa !important;
+  border: 1px solid #bbb !important;
+  padding: 15px;
+  top: 20%;
+  right: 0%;
+  min-width: 300px;
+  box-shadow: 0 2px 5px #ddd;
+  text-align: left;
+}
+
+.expando3-info {
+  background-color: #f6f6f6 !important;
+}
+
+.expando3-info table tr td {
+  padding: 15px;
+}
+
+.expando3-info table tr td:first-child {
+  background-color: #f6f6f6;
+  font-weight: bold;
+}
+
+#main-content {
+  display: flex;
+  padding: 15px;
+}
+
+#main-content.brokers-page {
+  flex-direction: column;
+}
+
+@media (min-width: 1200px) {
+  #main-content.brokers-page {
+    flex-direction: row;
+  }
+}
+
+.main-col {
+  float: none;
+  flex: 1;
+  margin: 0;
+  width: 100%;
+}
+
+.side-col {
+  float: none;
+  margin: 0;
+  padding: 15px;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .side-col {
+    flex: 0 0 25%;
+    width: 25%;
+    box-sizing: content-box;
+  }
+}
+
+@media (min-width: 1200px) {
+  .side-col {
+    flex: 0 0 300px;
+    width: 300px;
+    padding-left: 30px;
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 1300px) {
+  .side-col {
+    flex: 0 0 30%;
+    width: 30%;
+  }
+}
+
+.side-col h2 {
+  font-size: 1em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+.side-col .ad, .side-col .banner {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.side-col .topic-list {
+  margin-bottom: 30px;
+}
+
+.side-col .topic-list li a {
+  display: block;
+  font-size: 15px;
+  padding: 7px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.side-col .topic-list li a:hover {
+  background-color: #f8f8f8;
+}

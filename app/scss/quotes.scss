@@ -266,9 +266,18 @@ article {
 		font-size: 30px;
 	}
 	.current-price {
+		font-weight: 200;
 	}
 	.price-change-amount {
 
+	}
+	.price-pos {
+		font-size: 40px;
+		font-weight: 500;
+		.fa {
+			font-size: 60px;
+			vertical-align: -6px;
+		}
 	}
 }
 #big-box-ad-1 {

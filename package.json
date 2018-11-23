@@ -26,8 +26,6 @@
     "gulp-sass": "^4.0.1",
     "gulp-uglify": "^3.0.1",
     "gulp-util": "^3.0.8",
-    "vinyl-ftp": "^0.6.1",
-    "webpack": "^4.25.1",
-    "webpack-stream": "^5.1.1"
+    "vinyl-ftp": "^0.6.1"
   }
 }

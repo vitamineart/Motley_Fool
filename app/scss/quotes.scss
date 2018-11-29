@@ -16,7 +16,7 @@ body {
 .page-grid-layout {
 	@include media($large-screen-and-up) {
 		display: grid;
-		grid-template-columns: auto 30%;
+		grid-template-columns: auto 330px;
 		grid-gap: 15px;
 	}
 	.leaderboard {
@@ -27,7 +27,7 @@ body {
 	.top-right-ad {
 		padding-top: 15px;
 		display: none;
-		@media (min-width:1024px) {
+		@include media($large-screen-and-up) {
 			display: grid;
 			place-items: center;
 		}
@@ -35,7 +35,7 @@ body {
 	.column {
 		&.main-column {
 			margin-bottom: 60px;
-			@media (min-width:1024px) {
+			@include media($large-screen-and-up) {
 				margin-bottom: 30px;
 			}
 		}
@@ -73,16 +73,30 @@ article {
 .company-title-section {
 	border: none;
 	margin: 0;
-	@media (min-width:480px) {
+	@include media($mid-screen-and-up) {
 		display: flex;
 		align-items: center;
+	}
+	.company-mark {
+		vertical-align: middle;
+		display: inline-flex;
 	}
 	.company-name-container {
 		float: none;
 		margin: 0 15px 0 0;
-		width: auto;
+		width: inherit;
 		display: flex;
 		align-items: center;
+		justify-content: center;
+		@include media($mid-screen-and-up) {
+			text-align: left;
+		}
+	}
+	.quote-price-info {
+		text-align: center;
+		@include media($mid-screen-and-up) {
+			text-align: left;
+		}
 	}
 	.sub-page-dropdown-container {
 		float: none;
@@ -95,17 +109,81 @@ article {
 		align-items: baseline;
 		margin: 15px 0;
 		.company-name {
-			font-size: 60px;
+			font-size: 70px;
 			line-height: 1;
-			font-weight: 300;
+			font-weight: 200;
 			color: #000;
 			margin: 0 0 0 15px;
+			@include media($small-screen-and-up){
+				font-size: 72px;
+			}
+			@include media($medium-screen-and-up){
+				font-size:75px;
+			}
+			@include media($x-large-screen-and-up){
+				font-size: 90px;
+			}
 		}
 		.company-ticker {
-			font-size: 15px;
+			font-size: 11px;
 			color: #999;
 			font-weight: 900;
 			margin-left: 5px;
+			@include media($small-screen-and-up){
+				font-size: 13px;
+			}
+			@include media($small-screen-and-up){
+				font-size: 15px;
+			}
+		}
+	}
+	.extended-hours {
+		border-top: none;
+		margin: 0;
+		padding: 0;
+		&:before {
+			content: '';
+			display: block;
+			width: 85%;
+			padding: 0;
+			margin: 7.5px auto;
+			border-top: 1px solid #ddd;
+			@include media($small-screen-and-up){
+				margin: 15px auto;
+			}
+		}
+		.fa {
+			float: none;
+		}
+	}
+}
+.quote-price-info {
+	margin-left: auto;
+}
+.price-quote-container {
+	h2 {
+		font-weight: 400;
+		font-size: 25px;
+		@include media($small-screen-and-up){
+			font-size: 30px;
+		}
+		@include media($x-large-screen-and-up){
+			font-size: 35px;
+		}
+
+	}
+	.current-price {
+		font-weight: 100;
+	}
+	.price-change-amount {
+
+	}
+	.price-pos {
+		font-weight: 400;
+		.fa {
+			font-size: 50px;
+			vertical-align: -7px;
+			transform: scaleX(.7);
 		}
 	}
 }
@@ -122,16 +200,19 @@ article {
 		color: #999;
 		text-align: center;
 		cursor: pointer;
-		font-size: 16px;
+		font-size: 14px;
 		line-height: 1.1;
 		font-weight: 100;
 		transition: .3s ease;
 		position: relative;
 		box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.0);
 		flex: auto;
+		@include media($x-small-screen-and-up) {
+			font-size: 15px;
+		}
 		> span {
 		}
-		@media (min-width:1024px) {
+		@include media($large-screen-and-up) {
 			padding: 7.5px 15px;
 		}
 		&:hover, &:active, &:focus {
@@ -149,6 +230,7 @@ article {
 	}
 	display: flex;
 }
+
 .button-group {
   $base-border-color: gainsboro !default;
   $base-border-radius: 3px !default;
@@ -252,34 +334,13 @@ article {
 .company-description {
 	color: #000;
 	font-weight: 100;
-	margin-top: 15px;
+	margin-top: 30px;
+	font-size: 14px;
 }
 #page-selector {
 	font-family: inherit;
 }
-.quote-price-info {
-	margin-left: auto;
-}
-.price-quote-container {
-	h2 {
-		font-weight: 300;
-		font-size: 30px;
-	}
-	.current-price {
-		font-weight: 200;
-	}
-	.price-change-amount {
 
-	}
-	.price-pos {
-		font-size: 40px;
-		font-weight: 300;
-		.fa {
-			font-size: 60px;
-			vertical-align: -6px;
-		}
-	}
-}
 #big-box-ad-1 {
 	margin-bottom: 15px;
 	display: flex;
@@ -304,3 +365,5 @@ article {
 	border-bottom: none;
 	margin-bottom: 0;
 }
+
+

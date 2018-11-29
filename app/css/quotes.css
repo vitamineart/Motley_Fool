@@ -579,7 +579,7 @@ body {
 @media screen and (min-width: 1024px) {
   .page-grid-layout {
     display: grid;
-    grid-template-columns: auto 30%;
+    grid-template-columns: auto 330px;
     grid-gap: 15px;
   }
 }
@@ -595,7 +595,7 @@ body {
   display: none;
 }
 
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .page-grid-layout .top-right-ad {
     display: grid;
     place-items: center;
@@ -606,7 +606,7 @@ body {
   margin-bottom: 60px;
 }
 
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .page-grid-layout .column.main-column {
     margin-bottom: 30px;
   }
@@ -646,19 +646,41 @@ article h4 {
   margin: 0;
 }
 
-@media (min-width: 480px) {
+@media screen and (min-width: 860px) {
   .company-title-section {
     display: flex;
     align-items: center;
   }
 }
 
+.company-title-section .company-mark {
+  vertical-align: middle;
+  display: inline-flex;
+}
+
 .company-title-section .company-name-container {
   float: none;
   margin: 0 15px 0 0;
-  width: auto;
+  width: inherit;
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: 860px) {
+  .company-title-section .company-name-container {
+    text-align: left;
+  }
+}
+
+.company-title-section .quote-price-info {
+  text-align: center;
+}
+
+@media screen and (min-width: 860px) {
+  .company-title-section .quote-price-info {
+    text-align: left;
+  }
 }
 
 .company-title-section .sub-page-dropdown-container {
@@ -675,18 +697,108 @@ article h4 {
 }
 
 .company-title-section h1 .company-name {
-  font-size: 60px;
+  font-size: 70px;
   line-height: 1;
-  font-weight: 300;
+  font-weight: 200;
   color: #000;
   margin: 0 0 0 15px;
 }
 
+@media screen and (min-width: 480px) {
+  .company-title-section h1 .company-name {
+    font-size: 72px;
+  }
+}
+
+@media screen and (min-width: 660px) {
+  .company-title-section h1 .company-name {
+    font-size: 75px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .company-title-section h1 .company-name {
+    font-size: 90px;
+  }
+}
+
 .company-title-section h1 .company-ticker {
-  font-size: 15px;
+  font-size: 11px;
   color: #999;
   font-weight: 900;
   margin-left: 5px;
+}
+
+@media screen and (min-width: 480px) {
+  .company-title-section h1 .company-ticker {
+    font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .company-title-section h1 .company-ticker {
+    font-size: 15px;
+  }
+}
+
+.company-title-section .extended-hours {
+  border-top: none;
+  margin: 0;
+  padding: 0;
+}
+
+.company-title-section .extended-hours:before {
+  content: '';
+  display: block;
+  width: 85%;
+  padding: 0;
+  margin: 7.5px auto;
+  border-top: 1px solid #ddd;
+}
+
+@media screen and (min-width: 480px) {
+  .company-title-section .extended-hours:before {
+    margin: 15px auto;
+  }
+}
+
+.company-title-section .extended-hours .fa {
+  float: none;
+}
+
+.quote-price-info {
+  margin-left: auto;
+}
+
+.price-quote-container h2 {
+  font-weight: 400;
+  font-size: 25px;
+}
+
+@media screen and (min-width: 480px) {
+  .price-quote-container h2 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .price-quote-container h2 {
+    font-size: 35px;
+  }
+}
+
+.price-quote-container .current-price {
+  font-weight: 100;
+}
+
+.price-quote-container .price-pos {
+  font-weight: 400;
+}
+
+.price-quote-container .price-pos .fa {
+  font-size: 50px;
+  vertical-align: -7px;
+  transform: scaleX(0.7);
 }
 
 #article-filter {
@@ -703,7 +815,7 @@ article h4 {
   color: #999;
   text-align: center;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.1;
   font-weight: 100;
   transition: .3s ease;
@@ -712,7 +824,13 @@ article h4 {
   flex: auto;
 }
 
-@media (min-width: 1024px) {
+@media screen and (min-width: 400px) {
+  #article-filter .filter {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
   #article-filter .filter {
     padding: 7.5px 15px;
   }
@@ -824,34 +942,12 @@ article h4 {
 .company-description {
   color: #000;
   font-weight: 100;
-  margin-top: 15px;
+  margin-top: 30px;
+  font-size: 14px;
 }
 
 #page-selector {
   font-family: inherit;
-}
-
-.quote-price-info {
-  margin-left: auto;
-}
-
-.price-quote-container h2 {
-  font-weight: 300;
-  font-size: 30px;
-}
-
-.price-quote-container .current-price {
-  font-weight: 200;
-}
-
-.price-quote-container .price-pos {
-  font-size: 40px;
-  font-weight: 300;
-}
-
-.price-quote-container .price-pos .fa {
-  font-size: 60px;
-  vertical-align: -6px;
 }
 
 #big-box-ad-1 {

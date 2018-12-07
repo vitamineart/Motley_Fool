@@ -1245,6 +1245,10 @@
                             </div>
                         </article>
                         <hr>
+
+                        <div id="tickerpage_pitch"></div>
+
+                        <hr>
                         <article>
                             <div class="image">
                                 <a href="#"><img src="https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F501209%2Findustrials-autos-general-motors-cadillac-xt4-gm.jpg&h=281&w=479&op=resize" alt=""></a>
@@ -1308,9 +1312,6 @@
                     </div>
                 </div>
 
-                <div class="content-block">
-                    <div id="tickerpage_pitch"></div>
-                </div>
 
                 <div class="content-block" id="InteractiveChart">
                     <h2 class="subnav-header">Interactive Chart</h2>
@@ -1698,86 +1699,85 @@
 
             </div> <!-- ./ content-container -->
             <!-- Footer section -->
-    <div id="quote-nav-container">
-        <div id="quote-nav-toggle"></div>
-        <div id="quote-nav">
-            <a href="#Overview" class="quote-nav-btn">Overview</a>
-            <a href="#News_Analysis" class="quote-nav-btn">News &amp; Analysis</a>
-            <a href="#InteractiveChart" class="quote-nav-btn active">Interactive Chart</a>
-            <a href="#" class="quote-nav-btn">Options</a>
-            <a href="#" class="quote-nav-btn">Historical Prices</a>
-            <a href="#" class="quote-nav-btn">Dividends</a>
-            <a href="#" class="quote-nav-btn">Profile</a>
-            <a href="#" class="quote-nav-btn">Company Events</a>
-            <a href="#" class="quote-nav-btn">SEC Filings</a>
-            <a href="#" class="quote-nav-btn">Earnings/Growth</a>
-            <a href="#" class="quote-nav-btn">Financial Ratios</a>
-            <a href="#" class="quote-nav-btn">Wall St. Opinion</a>
-            <a href="#" class="quote-nav-btn">Major Holders</a>
-            <a href="#" class="quote-nav-btn">Insider Trades</a>
-            <a href="#" class="quote-nav-btn">Insider Roster</a>
-            <a href="#" class="quote-nav-btn">Income Statement</a>
-            <a href="#" class="quote-nav-btn">Balance Sheet</a>
-            <a href="#" class="quote-nav-btn">Cash Flow</a>
+            <div id="TOC-toggle"></div>
 
-            <script src="http://cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.js"></script>
+    <div id="TOC">
+        <a href="#Overview" class="TOC-item">Overview</a>
+        <a href="#News_Analysis" class="TOC-item">News &amp; Analysis</a>
+        <a href="#InteractiveChart" class="TOC-item active">Interactive Chart</a>
+        <a href="#" class="TOC-item">Options</a>
+        <a href="#" class="TOC-item">Historical Prices</a>
+        <a href="#" class="TOC-item">Dividends</a>
+        <a href="#" class="TOC-item">Profile</a>
+        <a href="#" class="TOC-item">Company Events</a>
+        <a href="#" class="TOC-item">SEC Filings</a>
+        <a href="#" class="TOC-item">Earnings/Growth</a>
+        <a href="#" class="TOC-item">Financial Ratios</a>
+        <a href="#" class="TOC-item">Wall St. Opinion</a>
+        <a href="#" class="TOC-item">Major Holders</a>
+        <a href="#" class="TOC-item">Insider Trades</a>
+        <a href="#" class="TOC-item">Insider Roster</a>
+        <a href="#" class="TOC-item">Income Statement</a>
+        <a href="#" class="TOC-item">Balance Sheet</a>
+        <a href="#" class="TOC-item">Cash Flow</a>
 
-            <script>
-                $(document).ready(function (){
-                    $('#quote-nav-toggle').on('click', function(event) {
-                        $(this).toggleClass('menuOpen');
-                        $('#quote-nav').toggleClass('visible');
-                        $('.content-container').toggleClass('menuOpen');
-                    });
-                    $('#quote-nav a[href^="#"]').on('click', function(event) {
-                        var target = $(this.getAttribute('href'));
-                        if( target.length ) {
-                            event.preventDefault();
-                            $('html, body').stop().animate({
-                                scrollTop: target.offset().top - 100
-                            }, 1000, 'easeOutQuad');
-                        }
-                        $(this).siblings('.quote-nav-btn').removeClass('active').end().addClass('active');
-                    });
+        <script src="http://cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.js"></script>
+
+        <script>
+            $(document).ready(function (){
+                $('#TOC-toggle').on('click', function(event) {
+                    $(this).toggleClass('menuOpen');
+                    $('#TOC').toggleClass('visible');
+                    $('.content-container').toggleClass('menuOpen');
                 });
-            </script>
+                $('#TOC a[href^="#"]').on('click', function(event) {
+                    var target = $(this.getAttribute('href'));
+                    if( target.length ) {
+                        event.preventDefault();
+                        $('html, body').stop().animate({
+                            scrollTop: target.offset().top - 100
+                        }, 1000, 'easeOutQuad');
+                    }
+                    $(this).siblings('.TOC-item').removeClass('active').end().addClass('active');
+                });
+            });
+        </script>
 
-            <!-- <form class="sub-page-dropdown-container">
-                <select id="page-selector" onchange="window.location = this.options[this.selectedIndex].value">
-                  <option>More TSLA pages... </option>
-                  <option value="/quote/nasdaq/tesla/tsla" class="selected">Overview</option>
-                  <optgroup label="Price &amp; Charts">
-                      <option value="/quote/nasdaq/tesla/tsla/interactive-chart">Interactive Chart</option>
-                      <option value="/quote/nasdaq/tesla/tsla/options-chain">Options</option>
-                      <option value="/quote/nasdaq/tesla/tsla/historical-quotes">Historical Prices</option>
-                      <option value="/quote/nasdaq/tesla/tsla/dividends">Dividends</option>
-                  </optgroup>
+        <!-- <form class="sub-page-dropdown-container">
+            <select id="page-selector" onchange="window.location = this.options[this.selectedIndex].value">
+              <option>More TSLA pages... </option>
+              <option value="/quote/nasdaq/tesla/tsla" class="selected">Overview</option>
+              <optgroup label="Price &amp; Charts">
+                  <option value="/quote/nasdaq/tesla/tsla/interactive-chart">Interactive Chart</option>
+                  <option value="/quote/nasdaq/tesla/tsla/options-chain">Options</option>
+                  <option value="/quote/nasdaq/tesla/tsla/historical-quotes">Historical Prices</option>
+                  <option value="/quote/nasdaq/tesla/tsla/dividends">Dividends</option>
+              </optgroup>
 
-                  <optgroup label="News, Coverage &amp; Boards">
-                      <option value="/quote/nasdaq/tesla/tsla/content">News &amp; Headlines</option>
-                  </optgroup>
-                  <optgroup label="Company">
-                      <option value="/quote/nasdaq/tesla/tsla/company-profile">Profile</option>
-                      <option value="/quote/nasdaq/tesla/tsla/company-events">Company Events</option>
-                      <option value="/quote/nasdaq/tesla/tsla/sec-filings">SEC Filings</option>
-                      <option value="/quote/nasdaq/tesla/tsla/earnings-growth-ratio">Earnings/Growth</option>
-                      <option value="/quote/nasdaq/tesla/tsla/financial-ratios">Financial Ratios</option>
-                      <option value="/quote/nasdaq/tesla/tsla/analyst-opinion">Wall St. Opinion</option>
-                  </optgroup>
-                  <optgroup label="Ownership">
-                      <option value="/quote/nasdaq/tesla/tsla/major-holders">Major Holders</option>
-                          <option value="/quote/nasdaq/tesla/tsla/insider-transactions">Insider Trades</option>
-                          <option value="/quote/nasdaq/tesla/tsla/insider-roster">Insider Roster</option>
-                  </optgroup>
-                  <optgroup label="Financials">
-                      <option value="/quote/nasdaq/tesla/tsla/income-statements">Income Statement</option>
-                      <option value="/quote/nasdaq/tesla/tsla/balance-sheet">Balance Sheet</option>
-                      <option value="/quote/nasdaq/tesla/tsla/cash-flow">Cash Flow</option>
-                  </optgroup>
-                </select>
-            </form> -->
-        </div>
+              <optgroup label="News, Coverage &amp; Boards">
+                  <option value="/quote/nasdaq/tesla/tsla/content">News &amp; Headlines</option>
+              </optgroup>
+              <optgroup label="Company">
+                  <option value="/quote/nasdaq/tesla/tsla/company-profile">Profile</option>
+                  <option value="/quote/nasdaq/tesla/tsla/company-events">Company Events</option>
+                  <option value="/quote/nasdaq/tesla/tsla/sec-filings">SEC Filings</option>
+                  <option value="/quote/nasdaq/tesla/tsla/earnings-growth-ratio">Earnings/Growth</option>
+                  <option value="/quote/nasdaq/tesla/tsla/financial-ratios">Financial Ratios</option>
+                  <option value="/quote/nasdaq/tesla/tsla/analyst-opinion">Wall St. Opinion</option>
+              </optgroup>
+              <optgroup label="Ownership">
+                  <option value="/quote/nasdaq/tesla/tsla/major-holders">Major Holders</option>
+                      <option value="/quote/nasdaq/tesla/tsla/insider-transactions">Insider Trades</option>
+                      <option value="/quote/nasdaq/tesla/tsla/insider-roster">Insider Roster</option>
+              </optgroup>
+              <optgroup label="Financials">
+                  <option value="/quote/nasdaq/tesla/tsla/income-statements">Income Statement</option>
+                  <option value="/quote/nasdaq/tesla/tsla/balance-sheet">Balance Sheet</option>
+                  <option value="/quote/nasdaq/tesla/tsla/cash-flow">Cash Flow</option>
+              </optgroup>
+            </select>
+        </form> -->
     </div>
 
     <footer class="footer">

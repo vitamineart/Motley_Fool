@@ -577,10 +577,9 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
-  .page-grid-layout {
+  .page-grid-layout.quotes-page {
     display: grid;
     grid-template-columns: auto 330px;
-    grid-gap: 15px;
   }
 }
 
@@ -633,6 +632,18 @@ body {
 
 #tickerpage_pitch {
   margin-bottom: 0;
+  padding: 15px;
+}
+
+#tickerpage_pitch h2 {
+  margin-bottom: 15px;
+}
+
+@media screen and (min-width: 860px) {
+  #tickerpage_pitch {
+    padding: 0;
+    margin-top: 30px;
+  }
 }
 
 article h4 {
@@ -975,4 +986,129 @@ article h4 {
 
 .expander-trigger.expander-hidden:before {
   content: 'Show More...';
+}
+
+#TOC-toggle {
+  position: fixed;
+  background-color: #336699;
+  z-index: 201;
+  top: 48px;
+  left: 0;
+  right: auto;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  font-size: 20px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+#TOC-toggle:hover, #TOC-toggle:active, #TOC-toggle:focus {
+  background-color: #4080bf;
+}
+
+#TOC-toggle:after {
+  content: '\f0ca';
+  font-family: FontAwesome;
+}
+
+#TOC-toggle.menuOpen {
+  left: calc(100% - 60px);
+}
+
+#TOC-toggle.menuOpen:after {
+  content: '\f00d';
+}
+
+@media screen and (min-width: 1024px) {
+  #TOC-toggle.menuOpen {
+    left: 30%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #TOC-toggle {
+    top: 99px;
+  }
+}
+
+#TOC {
+  position: fixed;
+  z-index: 200;
+  left: 0;
+  top: 48px;
+  width: calc(100% - 60px);
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  transition: .3s ease-out;
+  box-shadow: 0 0 3px transparent;
+  border-right: 1px solid transparent;
+  transform: translateX(-100%);
+  visibility: hidden;
+  background-color: rgba(255, 255, 255, 0.95);
+  height: 100%;
+}
+
+#TOC .TOC-item {
+  opacity: .7;
+  color: #336699;
+  font-weight: 100;
+  border-radius: 0;
+  padding: 5px 30px;
+  font-size: 14px;
+  transition: .2s;
+}
+
+#TOC .TOC-item:hover {
+  background: #d9e6f2;
+  color: #336699;
+  opacity: 1;
+}
+
+#TOC .TOC-item.active, #TOC .TOC-item:active, #TOC .TOC-item:focus {
+  background: #4080bf;
+  color: #fff;
+  opacity: 1;
+}
+
+#TOC.visible {
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+  box-shadow: 2px 0 10px #bbb;
+  border-right: 1px solid #eee;
+  width: calc(100% - 60px);
+}
+
+@media screen and (min-width: 1024px) {
+  #TOC.visible {
+    width: 30%;
+  }
+}
+
+#TOC.visible .TOC-item {
+  visibility: visible;
+  transform: none;
+  opacity: 1;
+}
+
+@media screen and (min-width: 1024px) {
+  #TOC {
+    top: 99px;
+  }
+}
+
+.content-container {
+  transition: .5s ease;
+  transform: none;
+  position: relative;
+}
+
+@media screen and (min-width: 1024px) {
+  .content-container.menuOpen {
+    transform: translateX(7%);
+  }
 }

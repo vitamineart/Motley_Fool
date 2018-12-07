@@ -1,3 +1,6 @@
+@import "helpers/breakpoints";
+@import "helpers/_colors";
+
 /* share box start */
 #share-box {
   position: fixed;
@@ -9,7 +12,7 @@
   justify-content: center;
   align-items: stretch;
   transition: .3s ease;
-  @media (max-width:1023px) {
+  @include media ($mid-screen-and-down) {
     visibility: hidden;
     transform: translateY(200%);
     &.visible {
@@ -22,7 +25,7 @@
   and (orientation : landscape) {
     display: none;
   }
-  @media (min-width:1024px) {
+  @include media($large-screen-and-up) {
     left: 0;
     top: 50%;
     transform: translate(0, -50%);
@@ -44,12 +47,11 @@
     line-height:50px;
     height: 50px;
     color: #fff;
-    // display: none;
     position: relative;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    @media (min-width:1024px) {
+    @include media($large-screen-and-up) {
       display: block;
       height: 50px;
       flex: 0 0 50px;
@@ -59,7 +61,7 @@
     &:hover, &:active, &:focus {
       box-shadow: 0 0 50px hsla(360, 100%, 0%, 0.2) inset;
       filter: saturate(150%) brightness(110%);
-      @media (min-width:1024px) {
+      @include media($large-screen-and-up) {
         line-height: 70px;
         height:70px;
       }
@@ -88,8 +90,8 @@
       text-transform: uppercase;
       font-weight: 500;
       font-size: 14px;
-      flex:1 1 auto;
-      @media (min-width:1024px) {
+      flex: 1 1 auto;
+      @include media($large-screen-and-up) {
         display: none;
       }
       .fa {

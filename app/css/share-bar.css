@@ -1,3 +1,11 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
 /* share box start */
 #share-box {
   position: fixed;
@@ -11,7 +19,7 @@
   transition: .3s ease;
 }
 
-@media (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   #share-box {
     visibility: hidden;
     transform: translateY(200%);
@@ -28,7 +36,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   #share-box {
     left: 0;
     top: 50%;
@@ -57,7 +65,7 @@
   align-items: center;
 }
 
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   #share-box .item {
     display: block;
     height: 50px;
@@ -72,7 +80,7 @@
   filter: saturate(150%) brightness(110%);
 }
 
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   #share-box .item:hover, #share-box .item:active, #share-box .item:focus {
     line-height: 70px;
     height: 70px;
@@ -112,7 +120,7 @@
   flex: 1 1 auto;
 }
 
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   #share-box .item#next-article {
     display: none;
   }

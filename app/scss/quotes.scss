@@ -14,10 +14,11 @@ body {
 }
 
 .page-grid-layout {
-	@include media($large-screen-and-up) {
-		display: grid;
-		grid-template-columns: auto 330px;
-		grid-gap: 15px;
+	&.quotes-page {
+		@include media($large-screen-and-up) {
+			display: grid;
+			grid-template-columns: auto 330px;
+		}
 	}
 	.leaderboard {
 		display: grid;
@@ -62,6 +63,14 @@ body {
 }
 #tickerpage_pitch {
 	margin-bottom: 0;
+	padding: 15px;
+	h2 {
+		margin-bottom: 15px;
+	}
+	@include media($mid-screen-and-up){
+		padding: 0;
+		margin-top: 30px;
+	}
 }
 article {
 	h4 {
@@ -366,4 +375,105 @@ article {
 	margin-bottom: 0;
 }
 
-
+// --- quote-nav
+#TOC-toggle {
+	position: fixed;
+	background-color: $blue;
+	z-index: 201;
+	top: 48px;
+	left: 0;
+	right: auto;
+	color: #fff;
+	width: 60px;
+	height: 60px;
+	font-size: 20px;
+	display: grid;
+	place-items: center;
+	cursor: pointer;
+	transition: .3s ease;
+	&:hover, &:active, &:focus {
+		background-color: lighten($blue, 10%);
+	}
+	&:after {
+		content: '\f0ca';
+		font-family: FontAwesome;
+	}
+	&.menuOpen {
+		left: calc(100% - 60px);
+		&:after {
+			content: '\f00d';
+		}
+		@include media($large-screen-and-up){
+			left: 30%;
+		}
+	}
+	@include media($large-screen-and-up){
+		top:99px;
+	}
+}
+#TOC {
+	position: fixed;
+	z-index: 200;
+	left: 0;
+	top: 48px;
+	width: calc(100% - 60px);
+	overflow: auto;
+	display: flex;
+	flex-direction: column;
+	transition: .3s ease-out;
+	box-shadow: 0 0 3px transparent;
+	border-right: 1px solid transparent;
+	transform: translateX(-100%);
+	visibility: hidden;
+	background-color: hsla(0,0%,100%,.95);
+	height: 100%;
+	.TOC-item {
+		opacity:.7;
+		color: $blue;
+		font-weight: 100;
+		border-radius: 0;
+		padding: 5px 30px;
+		font-size: 14px;
+		transition: .2s;
+		&:hover {
+			background: lighten($blue, 50%);
+			color: $blue;
+			opacity:1;
+		}
+		&.active, &:active, &:focus {
+			background: lighten($blue, 10%);
+			color: #fff;
+			opacity:1;
+		}
+	}
+	&.visible {
+		visibility: visible;
+		opacity: 1;
+		transform: none;
+		box-shadow: 2px 0 10px #bbb;
+		border-right: 1px solid #eee;
+		width: calc(100% - 60px);
+		@include media($large-screen-and-up) {
+			width: 30%;
+		}
+		.TOC-item {
+			visibility: visible;
+			transform: none;
+			opacity: 1;
+		}
+	}
+	@include media($large-screen-and-up) {
+		top: 99px;
+	}
+}
+.content-container {
+	transition: .5s ease;
+	transform: none;
+	position: relative;
+	&.menuOpen {
+		// transform: translateX(30%);
+		@include media($large-screen-and-up){
+			transform: translateX(7%);
+		}
+	}
+}

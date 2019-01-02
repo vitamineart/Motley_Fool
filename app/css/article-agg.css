@@ -1,3 +1,90 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+.color-label:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 30px;
+  width: 150px;
+  height: 3px;
+}
+
+@media screen and (max-width: 659px) {
+  .color-label:after {
+    left: -15px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 659px) {
+  .color-label {
+    padding-left: 15px;
+    position: relative;
+  }
+  .color-label.content-block-label, .color-label.page-title-header {
+    color: #000 !important;
+  }
+  .color-label.content-block-label {
+    line-height: 2.1;
+  }
+  .color-label.author-header:after {
+    display: none;
+  }
+  .color-label.page-title-header:after {
+    top: 14px;
+  }
+  .m-np .color-label {
+    padding-left: 30px;
+  }
+  .m-np .color-label:after {
+    left: 0;
+  }
+}
+
+.color-label.l-yellow:after {
+  background: #FFCC33;
+}
+
+.color-label.l-blue:after {
+  background: #336699;
+}
+
+.color-label.l-green:after {
+  background: #339933;
+}
+
+.color-label.l-red:after {
+  background: #CC3300;
+}
+
+.color-label.l-beige:after {
+  background: #FFCC99;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
@@ -365,7 +452,7 @@ h6 {
   color: #333;
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 859px) {
   .content-block article .text > p {
     display: none;
   }

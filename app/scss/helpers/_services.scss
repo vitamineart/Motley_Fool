@@ -1,5 +1,5 @@
 @import "breakpoints";
-@import "colors";
+@import "helpers/colors";
 
 @mixin service_label_color($color) {
 	background: $color;

@@ -1,3 +1,10 @@
+@import "bourbon";
+@import "neat";
+@import "helpers/breakpoints";
+@import "helpers/color-label";
+@import "helpers/colors";
+@import "helpers/font-classes";
+
 // color variables
 $black: #000;
 $base: #333;
@@ -16,13 +23,6 @@ $beige: #FFCC99;
 //   Template for aggregator pages 			   //
 //                                             //
 /////////////////////////////////////////////////
-
-// font variable
-$system-font: -apple-system, BlinkMacSystemFont,
-	"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
-	"Fira Sans", "Droid Sans", "Helvetica Neue",
-	sans-serif;
-// font variable end
 
 body {
 	font-family: $system-font;
@@ -320,7 +320,7 @@ h6 {
 			flex: 1 1 50%;
 			color: $base;
 			> p {
-				@media (max-width:767px) {
+				@include media($medium-screen-and-down) {
 					display: none;
 				}
 			}

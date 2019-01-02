@@ -1,13 +1,90 @@
 @import "article-agg.scss";
-@import "color-label";
 @import "bourbon";
 @import "neat";
+@import "helpers/color-label";
 @import "helpers/breakpoints";
+@import "helpers/font-classes";
 
-$system-font: -apple-system, BlinkMacSystemFont,
-	"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
-	"Fira Sans", "Droid Sans", "Helvetica Neue",
-	sans-serif;
+
+// switch
+.label-switch {
+  $action-color: #477DCA !default;
+  $base-background-color: white !default;
+  $switch-width: 52px;
+  $switch-padding: 2px;
+  $switch-height: 32px;
+  $switch-radius: $switch-height;
+  $knob-size: $switch-height - ($switch-padding * 2);
+  $knob-radius: $switch-height - ($switch-padding * 2);
+  $knob-width: $knob-size;
+  $switch-background: $base-background-color;
+  $switch-border-background: darken($base-background-color, 9%);
+  $switch-shadow: 0 2px 5px transparentize(black, 0.6);
+
+  border-radius: $switch-radius;
+  cursor: pointer;
+  display: inline-flex;
+  height: $switch-height;
+  position: relative;
+  width: $switch-width;
+
+  input[type="checkbox"] {
+    display: none;
+
+    + .checkbox {
+      background: $switch-border-background;
+      border: 0;
+      border-radius: $switch-radius;
+      cursor: pointer;
+      height: $switch-height;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      transition: all 0.3s ease;
+      width: $switch-width;
+      z-index: 0;
+
+      &::before {
+        @include position(absolute, 2px 0 0 2px);
+        background: $switch-background;
+        border-radius: $switch-radius;
+        content: "";
+        height: $knob-radius;
+        transform: scale(1);
+        transition: all 0.3s ease;
+        width: $switch-width - ($switch-padding * 2);
+        z-index: 1;
+      }
+
+      &::after {
+        @include position(absolute, 2px 0 0 2px);
+        @include size($knob-size);
+        background: $switch-background;
+        border-radius: $knob-radius;
+        box-shadow: $switch-shadow;
+        content: "";
+        transition: all 0.3s ease;
+        z-index: 2;
+      }
+    }
+
+    &:checked {
+      + .checkbox {
+        background: $yellow;
+
+        &::before {
+          transform: scale(0);
+        }
+
+        &::after {
+          left: $switch-width - $knob-width - ($switch-padding);
+        }
+      }
+    }
+  }
+}
+
+
 
 body {
 	font-family: $system-font;
@@ -17,7 +94,8 @@ body {
 	&.quotes-page {
 		@include media($large-screen-and-up) {
 			display: grid;
-			grid-template-columns: auto 330px;
+			grid-gap: 15px;
+			grid-template-columns: auto 361px;
 		}
 	}
 	.leaderboard {
@@ -41,22 +119,35 @@ body {
 			}
 		}
 		&.sidebar {
-
+			.stock-performance {
+				display: none;
+				@include media($large-screen-and-up){
+					display: block;
+				}
+			}
 		}
 	}
 }
 .content-block {
 	.content-block-label {
 		font-size: 16px;
-		margin-bottom: 15px;
 		& + .subhead {
 			font-size: 12px;
 			font-weight: 100;
-			margin-top: -15px;
-			margin-bottom: 30px;
+			margin-bottom: 15px;
 			@media (max-width:659px) {
 				margin-left: 15px;
-				margin-top: -20px;
+				margin-top: -7.5px;
+			}
+		}
+
+	}
+	&.m-np {
+		.content-block-label {
+			& + .subhead {
+				@include media($small-screen-and-down) {
+					margin-left: 30px;
+				}
 			}
 		}
 	}
@@ -65,11 +156,31 @@ body {
 	margin-bottom: 0;
 	padding: 15px;
 	h2 {
-		margin-bottom: 15px;
+		font-size: 25px;
+		margin-bottom: 0;
+		@include media($x-small-screen-and-up){
+			font-size: 28px;
+		}
+		@include media($small-screen-and-up){
+			font-size: 30px;
+		}
+		@include media ($medium-screen-and-down) {
+			margin-bottom: 7.5px;
+		}
 	}
 	@include media($mid-screen-and-up){
+		margin-bottom: 0;
 		padding: 0;
 		margin-top: 30px;
+	}
+	h2 + p + p,
+	h2 + p + p + p {
+		@include media ($medium-screen-and-down) {
+			display: none;
+		}
+	}
+	.ticker_pitch {
+		// background-color: $yellow;
 	}
 }
 article {
@@ -92,13 +203,15 @@ article {
 	}
 	.company-name-container {
 		float: none;
-		margin: 0 15px 0 0;
 		width: inherit;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		@include media($mid-screen-and-up) {
 			text-align: left;
+		}
+		@include media($mid-screen-and-up) {
+			margin: 0 55px 0 0;
 		}
 	}
 	.quote-price-info {
@@ -128,6 +241,9 @@ article {
 			}
 			@include media($medium-screen-and-up){
 				font-size:75px;
+			}
+			@include media($large-screen-and-up){
+				font-size:65px;
 			}
 			@include media($x-large-screen-and-up){
 				font-size: 90px;
@@ -168,32 +284,51 @@ article {
 }
 .quote-price-info {
 	margin-left: auto;
+	@include media($large-screen-and-up){
+		margin-top: 15px;
+	}
 }
 .price-quote-container {
 	h2 {
+		padding: 0;
 		font-weight: 400;
-		font-size: 25px;
+		font-size: 26px;
 		@include media($small-screen-and-up){
-			font-size: 30px;
+			font-size: 28px;
+		}
+		@include media($large-screen-and-up){
+			font-size: 27px;
 		}
 		@include media($x-large-screen-and-up){
 			font-size: 35px;
 		}
-
 	}
 	.current-price {
-		font-weight: 100;
+		font-weight: 300;
+		color: #000;
 	}
 	.price-change-amount {
 
 	}
 	.price-pos {
-		font-weight: 400;
+		// color: $green;
+		font-weight: 500;
 		.fa {
 			font-size: 50px;
 			vertical-align: -7px;
 			transform: scaleX(.7);
+			margin: 0;
+			padding: 0;
+			@include media($small-screen-and-up){
+				font-size: 55px;
+			}
+			@include media($x-large-screen-and-up){
+				font-size: 60px;
+			}
 		}
+	}
+	.view-advanced-chart {
+		margin: 7.5px 0;
 	}
 }
 
@@ -411,30 +546,29 @@ article {
 		top:99px;
 	}
 }
-#TOC {
-	position: fixed;
-	z-index: 200;
-	left: 0;
-	top: 48px;
-	width: calc(100% - 60px);
-	overflow: auto;
+#sidebar-nav {
 	display: flex;
 	flex-direction: column;
 	transition: .3s ease-out;
 	box-shadow: 0 0 3px transparent;
 	border-right: 1px solid transparent;
-	transform: translateX(-100%);
-	visibility: hidden;
 	background-color: hsla(0,0%,100%,.95);
-	height: 100%;
-	.TOC-item {
-		opacity:.7;
+	padding: 15px 0;
+	.sidebar-nav-item {
 		color: $blue;
 		font-weight: 100;
 		border-radius: 0;
-		padding: 5px 30px;
+		padding: 5px 30px 5px 45px;
 		font-size: 14px;
 		transition: .2s;
+		font-weight: 400;
+		margin: 0;
+		&.group-header {
+			color: #777;
+			font-size: 16px;
+			font-weight: 500;
+			padding: 5px 30px 5px 30px;
+		}
 		&:hover {
 			background: lighten($blue, 50%);
 			color: $blue;
@@ -456,7 +590,7 @@ article {
 		@include media($large-screen-and-up) {
 			width: 30%;
 		}
-		.TOC-item {
+		.sidebar-nav-item {
 			visibility: visible;
 			transform: none;
 			opacity: 1;
@@ -475,5 +609,47 @@ article {
 		@include media($large-screen-and-up){
 			transform: translateX(7%);
 		}
+	}
+}
+.view-advanced-chart {
+	margin: 0;
+	a {
+		margin: 0;
+	}
+}
+.sponsered-by-chart {
+	margin-top: 15px;
+	padding-bottom: 0;
+	text-align: left;
+}
+
+// key-data table expando
+.key-data-points {
+	tr {
+		transition: 1s ease;
+	}
+	.expando {
+		display: none;
+	}
+	&.expanded {
+		.expando {
+			display: table-row;
+		}
+	}
+}
+.show-more-switch {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	display: flex;
+	&:before {
+		content: 'Show More Info';
+		// margin-bottom: 15px;
+		// color: $gray;
+		font-size: 13px;
+		font-weight: 100;
+	}
+	&.full-info::before {
+		content: 'Show less Info';
 	}
 }
